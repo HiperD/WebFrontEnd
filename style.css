@@ -112,7 +112,7 @@ footer p {
 }
 
 .imagem-principal img {
-    width: 1080px; /* Ajuste conforme o tamanho desejado */
+    max-width: 1080px; /* Ajuste conforme o tamanho desejado */
     border-radius: 15px;
 }
 
@@ -124,7 +124,7 @@ footer p {
 }
 
 .mosaico img {
-    width: 200px; /* Ajuste conforme o tamanho desejado */
+    max-width: 200px; /* Ajuste conforme o tamanho desejado */
     border-radius: 10px;
 }
 
