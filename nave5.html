@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>890 Jump - Origin Jumpworks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function toggleColapsar() {
+    const conteudo = document.getElementById("conteudoColapsavel");
+    conteudo.classList.toggle("ativo");
+    const btn = document.querySelector(".btn-colapsar");
+    if (conteudo.classList.contains("ativo")) {
+        btn.textContent = "Esconder Especificações";
+    } else {
+        btn.textContent = "Mostrar Especificações";
+    }
+}
+</script>
+
+<body>
+
+    <header id="header">
+        <nav class="navbar">
+            <a href="index.html">Início</a>
+            <a href="nave1.html">Idris M</a>
+            <a href="nave2.html">Hammerhead</a>
+            <a href="nave4.html">Reclaimer</a>
+            <a href="nave5.html">Hull C</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="nave">
+            <h2>890 Jump</h2>
+            <p>A Origin 890 Jump é uma superiate interestelar de luxo fabricada pela Origin Jumpworks, projetada para proporcionar uma experiência de viagem opulenta através dos sistemas estelares.</p>
+            <div class="galeria">
+                <div class="imagem-principal">
+                    <img id="imagemPrincipal" src="890_Jump/img1.png" alt="Imagem Principal da Nave">
+                </div>
+                <div class="mosaico" id="mosaico">
+                </div>
+            </div>
+
+            <div class="botoes-troca">
+                <button onclick="trocarImagem(-1)"><</button>
+                <button onclick="trocarImagem(1)">></button>
+            </div>
+
+           <section class="colapsavel">
+                <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
+                <div class="conteudo-colapsavel" id="conteudoColapsavel">
+                    <h3>Especificações gerais:</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Superiate de luxo</li>
+                        <li><strong>Fabricante:</strong> Origin Jumpworks</li>
+                        <li><strong>Comprimento:</strong> Aproximadamente 205 metros</li>
+                        <li><strong>Massa:</strong> 44.237.159kg ou 44.237 Toneladas</li>
+                        <li><strong>Tripulação mínima:</strong> 8 pessoas</li>
+                        <li><strong>Tripulação ideal:</strong> 16 pessoas</li>
+                        <li><strong>Passageiros:</strong> Até 40 pessoas</li>
+                        <li><strong>Capacidade de hangar:</strong> Possui 2 hangares, um superior com escotlha, para armazenagem de navez ou cargas e um inferior em formato de elevador, para armazenagem de veiculos ou cargas, totalizando 388 SCU SCU</li>
+                        <li><strong>Armamento principal:</strong> 4 torres tripuladas com canhões de energia</li>
+                        <li><strong>Armamento secundário:</strong> Mísseis de médio alcance e sistemas de defesa automática</li>
+                    </ul>
+
+                    <h3>Design e estrutura:</h3>
+                    <p>A 890 Jump possui quatro conveses distintos:</p>
+                    <ul>
+                        <li><strong>Convés principal:</strong> Inclui áreas de lazer como bar, piscina e sauna, proporcionando conforto e entretenimento aos passageiros.</li>
+                        <li><strong>Convés de Comando:</strong> Equipado com a ponte principal e uma ponte de batalha alternativa localizada no Convés Orlop, oferecendo opções estratégicas de controle.</li>
+                        <li><strong>Convés de Hangar:</strong> Localizado na frente da nave, permite o acoplamento de pequenas naves e veículos.</li>
+                        <li><strong>Convés de Carga:</strong> Situado na parte traseira, oferece espaço para armazenamento adicional e acomodação de veículos.</li>
+                    </ul>
+                    <p>Além disso, a nave conta com uma enfermaria de nível 2, duas cápsulas de escape para 8 pessoas cada e interiores espaçosos que acomodam confortavelmente os hóspedes.</p>
+
+                    <h3>Armamento e Defesa:</h3>
+                    <p>Apesar de seu foco em luxo, a 890 Jump não compromete a segurança. Está equipada com sistemas de defesa avançados, incluindo torres automatizadas e manuais, além de contramedidas eletrônicas para proteção contra ameaças.</p>
+                    
+                    <h3>Função e Utilização:</h3>
+                    <p>A 890 Jump é ideal para:</p>
+                    <ul>
+                        <li><strong>Viagens de luxo:</strong> Oferecendo uma experiência inigualável de conforto e estilo.</li>
+                        <li><strong>Eventos corporativos:</strong> Servindo como local para reuniões e conferências de alto nível.</li>
+                        <li><strong>Exploração:</strong> Com capacidade para viagens de longa distância com conforto.</li>
+                    </ul>
+
+                    <h3>Curiosidades:</h3>
+                    <p>A 890 Jump é frequentemente comparada a iates de luxo terrestres, simbolizando status e prestígio no universo.</p>
+                    <p>A sola do trém de pouso da nave é maior que um caça de combate</p>
+                    <p>Sua presença em qualquer sistema estelar é um indicativo de riqueza e influência.</p>
+                </div>
+            </section>
+            <h3>Resumo:</h3>
+            <p>A Origin 890 Jump é um superiate de luxo fabricado pela Origin Jumpworks, projetado para oferecer o máximo em conforto, sofisticação e segurança no universo. Com interiores amplos e elegantes, grande capacidade de passageiros e múltiplas áreas de lazer, a nave alia design premium a um arsenal respeitável.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>Apresentação da empresa</h3>
+            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+        </div>
+        <div>
+            <h3>Onde somos</h3>
+            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+        </div>
+        <div>
+            <h3>Quem somos</h3>
+            <p>Somo suma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+        </div>
+        <div>
+            <h3>Trabalhe conosco</h3>
+            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+        </div>
+    </footer>
+
+<script>
+    const imagens = [
+        "890_Jump/img1.png",
+        "890_Jump/img2.jpg",
+        "890_Jump/img3.jpg",
+        "890_Jump/img4.jpg",
+        "890_Jump/img5.jpg"
+    ];
+    let indice = 0;
+    function atualizarGaleria() {
+        document.getElementById("imagemPrincipal").src = imagens[indice];
+        const mosaico = document.getElementById("mosaico");
+        mosaico.innerHTML = "";
+        for (let i = 1; i < 5; i++) {
+            let imgIndex = (indice + i) % imagens.length;
+            const img = document.createElement("img");
+            img.src = imagens[imgIndex];
+            img.alt = `Imagem ${imgIndex + 1} da Nave`;
+            mosaico.appendChild(img);
+        }
+    }
+    function trocarImagem(direcao) {
+        indice = (indice + direcao + imagens.length) % imagens.length;
+        atualizarGaleria();
+    }
+    atualizarGaleria();
+    
+    // Troca automática a cada 3 segundos
+    setInterval(() => {
+        trocarImagem(1);
+    }, 3000);
+
+    // Esconde o menu ao rolar
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        const currentScrollPos = window.pageYOffset;
+        const header = document.getElementById("header");
+        if (prevScrollpos > currentScrollPos) {
+            header.style.top = "0";
+        } else {
+            header.style.top = "-80px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+
+</body>
+</html>

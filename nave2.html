@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Hammerhead - Anvil Aerospace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function toggleColapsar() {
+    const conteudo = document.getElementById("conteudoColapsavel");
+    conteudo.classList.toggle("ativo");
+    const btn = document.querySelector(".btn-colapsar");
+    if (conteudo.classList.contains("ativo")) {
+        btn.textContent = "Esconder Especificações";
+    } else {
+        btn.textContent = "Mostrar Especificações";
+    }
+}
+</script>
+
+<body>
+
+    <header id="header">
+        <nav class="navbar">
+            <a href="index.html">Início</a>
+            <a href="nave1.html">Idris M</a>
+            <a href="nave3.html">890 Jump</a>
+            <a href="nave4.html">Reclaimer</a>
+            <a href="nave5.html">Hull C</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="nave">
+            <h2>Hammerhead</h2>
+            <p>A Hammerhead é uma corveta pesada de patrulha, fabricada pela Anvil Aerospace, uma das mais renomadas fabricantes de naves militares e de segurança do universo de Star Citizen. Projetada com foco na defesa de frotas e interdição de ameaças em larga escala, a Hammerhead é um ícone entre as forças de segurança corporativas, militares e organizações privadas de grande porte.</p>
+            <div class="galeria">
+                <div class="imagem-principal">
+                    <img id="imagemPrincipal" src="Hammerhead/img1.png" alt="Imagem Principal da Nave">
+                </div>
+                <div class="mosaico" id="mosaico">
+                </div>
+            </div>
+
+            <div class="botoes-troca">
+                <button onclick="trocarImagem(-1)"><</button>
+                <button onclick="trocarImagem(1)">></button>
+            </div>
+
+           <section class="colapsavel">
+                <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
+                <div class="conteudo-colapsavel" id="conteudoColapsavel">
+                    <h3>Especificações gerais:</h3>
+                    <ul>
+                        <li><strong>Tipo:</strong> Corveta de patrulha pesada</li>
+                        <li><strong>Fabricante:</strong> Anvil Aerospace</li>
+                        <li><strong>Comprimento:</strong> Aproximadamente 115 metros</li>
+                        <li><strong>Massa:</strong> 4.260.000kg ou 4.260 Toneladas</li>
+                        <li><strong>Tripulação mínima:</strong> 4 pessoas</li>
+                        <li><strong>Tripulação ideal:</strong> 8 a 12 pessoas</li>
+                        <li><strong>Capacidade de hangar:</strong> Não possui hangar interno para naves, mas possui um elevador onde é possivel a acomodação de um veículo ou 40 SCU</li>
+                        <li><strong>Armamento principal:</strong> 6 torres tripuladas com canhões balísticos e de energia</li>
+                        <li><strong>Armamento secundário:</strong> Mísseis de médio alcance e sistemas de defesa automática</li>
+                    </ul>
+
+                    <h3>Design e estrutura:</h3>
+                    <p>A Hammerhead é famosa pela sua capacidade de oferecer uma bolha defensiva em torno de frotas ou áreas específicas, graças às suas seis torres tripuladas. Cada uma delas conta com canhões de médio a grande porte, controladas por operadores humanos, garantindo uma resposta rápida e eficaz a ameaças múltiplas, especialmente enxames de caças inimigos.</p>
+
+                    <p>Além disso, a nave é equipada com sistemas de mísseis de médio alcance, que podem ser empregados tanto na defesa quanto em ataques cirúrgicos contra naves de maior porte.</p>
+
+                    <h3>Armamento e Defesa:</h3>
+                    <p>O destaque absoluto da Idris-M é o seu canhão frontal de calibre capital, projetado para perfurar blindagens pesadas e incapacitar alvos de grande porte, como outras fragatas ou naves capitais. Complementando a arma principal, a nave conta com múltiplas torres automáticas e manuais espalhadas pela fuselagem, assegurando cobertura defensiva em 360 graus, essencial em batalhas espaciais onde ataques podem vir de qualquer direção.</p>
+                    <p>Além disso, a nave possui sistemas internos de mísseis de médio alcance, capazes de realizar interceptações ou ataques coordenados com escoltas.</p>
+                    <ul>
+                        <li>Blindagem reforçada de cerâmica metálica.</li>
+                        <li>Geradores de escudos multicamada.</li>
+                        <li>Sistemas automáticos de contramedidas eletrônicas (ECM) para evasão de mísseis.</li>
+                    </ul>
+                    <p>Essa combinação faz da Hammerhead uma das plataformas mais efetivas contra caças e bombardeiros leves, sendo especialmente temida em emboscadas e bloqueios.</p>
+                    
+                    <h3>Capacidade Operacional:</h3>
+                    <p>A Hammerhead não possui hangar próprio, sendo mais adequada para operar como escolta de naves capitais, transportes ou comboios. Sua função é clara: manter o perímetro seguro, neutralizar ameaças rápidas e proporcionar tempo e espaço para que naves mais vulneráveis completem suas missões.</p>
+                    <p>Pode operar de forma autônoma por períodos prolongados, com suporte de vida, armazenamento e alojamentos suficientes para longas patrulhas interestelares.</p>
+
+                    <h3>Função tática:</h3>
+                    <p>Projetada para missões de patrulha, bloqueio, interceptação e escolta, a Hammerhead é ideal para:</p>
+                    <ul>
+                        <li>Proteção de comboios.</li>
+                        <li>Interdição de zonas de tráfego espacial.</li>
+                        <li>Defesa de postos avançados.</li>
+                        <li>Respostas rápidas a sinais de emergência ou invasões.</li>
+                    </ul>
+                    <p>Seu poder de fogo superior e capacidade de manter múltiplos alvos sob pressão simultaneamente fazem dela uma peça indispensável em grupos de ataque ou em operações de policiamento espacial.</p>
+
+                    <h3>Curiosidades:</h3>
+                    <p>A Hammerhead é amplamente utilizada pelas forças de segurança do United Empire of Earth (UEE), além de corporações privadas que atuam em áreas de risco elevado.</p>
+                    <p>Seu nome é uma referência à icônica "cabeça de martelo" de sua estrutura, lembrando o formato de tubarões-martelo terrestres, simbolizando sua força e agressividade.</p>
+                    <p>Apesar de não ser uma nave capital, sua capacidade de defesa a coloca acima de muitas fragatas leves.</p>
+                    <p>Muitas organizações privadas investem na Hammerhead como forma de dissuasão, patrulha de fronteiras ou aplicação de força rápida.</p>
+                </div>
+            </section>
+            <h3>Resumo:</h3>
+            <p>A Hammerhead é a personificação da superioridade defensiva e ofensiva em combates espaciais de médio porte. Seu poder de fogo distribuído, combinado com uma blindagem resiliente e sistemas de suporte avançados, a tornam indispensável para quem precisa patrulhar ou proteger regiões perigosas. Quer seja parte de uma frota ou operando sozinha, a Hammerhead garante que qualquer ameaça pensará duas vezes antes de se aproximar.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>Apresentação da empresa</h3>
+            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+        </div>
+        <div>
+            <h3>Onde somos</h3>
+            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+        </div>
+        <div>
+            <h3>Quem somos</h3>
+            <p>Somo suma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+        </div>
+        <div>
+            <h3>Trabalhe conosco</h3>
+            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+        </div>
+    </footer>
+
+<script>
+    const imagens = [
+        "Hammerhead/img1.png",
+        "Hammerhead/img2.png",
+        "Hammerhead/img3.jpg",
+        "Hammerhead/img4.jpg",
+        "Hammerhead/img5.jpg"
+    ];
+    let indice = 0;
+    function atualizarGaleria() {
+        document.getElementById("imagemPrincipal").src = imagens[indice];
+        const mosaico = document.getElementById("mosaico");
+        mosaico.innerHTML = "";
+        for (let i = 1; i < 5; i++) {
+            let imgIndex = (indice + i) % imagens.length;
+            const img = document.createElement("img");
+            img.src = imagens[imgIndex];
+            img.alt = `Imagem ${imgIndex + 1} da Nave`;
+            mosaico.appendChild(img);
+        }
+    }
+    function trocarImagem(direcao) {
+        indice = (indice + direcao + imagens.length) % imagens.length;
+        atualizarGaleria();
+    }
+    atualizarGaleria();
+    
+    // Troca automática a cada 3 segundos
+    setInterval(() => {
+        trocarImagem(1);
+    }, 3000);
+
+    // Esconde o menu ao rolar
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        const currentScrollPos = window.pageYOffset;
+        const header = document.getElementById("header");
+        if (prevScrollpos > currentScrollPos) {
+            header.style.top = "0";
+        } else {
+            header.style.top = "-80px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+
+</body>
+</html>

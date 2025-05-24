@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Naves - Star Citizen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Menu de navegação -->
+    <header id="header">
+        <nav class="navbar">
+            <a href="#nave1">Idris M</a>
+            <a href="#nave2">Hammerhead</a>
+            <a href="#nave3">890 Jump</a>
+            <a href="#nave4">Reclaimer</a>
+            <a href="#nave5">Hull C</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="nave1" class="nave">
+            <a href="nave1.html">
+                <img src="Idris_M\img1.png" alt="Idris M">
+            </a>
+            <h2>Idris M</h2>
+            <p>Idris-M é uma fragata de uso militar desenvolvida pela Aegis Dynamics. Originalmente projetada para as Forças de Defesa da UEE, a Idris-M é uma das maiores e mais poderosas naves capitais que podem ser operadas por civis, embora em número extremamente limitado. Armamentada com um canhão de calibre capital, torres automáticas e capacidade de hangar para caças menores, a Idris-M é ideal para combates de grande escala, patrulhas e escoltas.</p> 
+            <a href="nave1.html" class="btn">Saiba mais</a>
+        </section>
+
+        <section id="nave2" class="nave">
+            <a href="nave2.html">
+                <img src="Hammerhead\img1.png" alt="Hammerhead">
+            </a>
+            <h2>Hammerhead</h2>
+            <p>A Hammerhead é uma corveta de patrulha pesada fabricada pela Anvil Aerospace. Projetada para defesa de frotas e operações de escolta, a Hammerhead se destaca por seu impressionante poder de fogo, composto por seis torres tripuladas, capazes de oferecer cobertura total em todas as direções.Sua robustez estrutural e a capacidade de acomodar uma tripulação significativa a tornam ideal para missões de segurança, bloqueio e patrulhamento de zonas de risco elevado.</p>
+            <a href="nave2.html" class="btn">Saiba mais</a>
+        </section>
+
+        <section id="nave3" class="nave">
+            <a href="nave3.html">
+                <img src="890_Jump\img1.jpg" alt="890 Jump">
+            </a>
+            <h2>890 Jump</h2>
+            <p>A Origin 890 Jump é uma superiate interestelar de luxo fabricada pela Origin Jumpworks GmbH, projetada para proporcionar uma experiência de viagem opulenta através dos sistemas estelares.</p>
+            <a href="nave3.html" class="btn">Saiba mais</a>
+        </section>
+
+        <section id="nave4" class="nave">
+            <a href="nave4.html">
+                <img src="Reclaimer\img1.jpg" alt="Reclaimer">
+            </a>
+            <h2>Reclaimer</h2>
+            <p>Descrição breve da Nave 4.</p>
+            <a href="nave4.html" class="btn">Saiba mais</a>
+        </section>
+
+        <section id="nave5" class="nave">
+            <a href="nave5.html">
+                <img src="Hull_C\img1.png" alt="Hull_C">
+            </a>
+            <h2>Hull C</h2>
+            <p>Descrição breve da Nave 5.</p>
+            <a href="nave5.html" class="btn">Saiba mais</a>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <h3>Apresentação da empresa</h3>
+            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+        </div>
+        <div>
+            <h3>Onde somos</h3>
+            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+        </div>
+        <div>
+            <h3>Quem somos</h3>
+            <p>Somo suma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+        </div>
+        <div>
+            <h3>Trabalhe conosco</h3>
+            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+        </div>
+    </footer>
+
+    <script>
+        // Esconde o menu ao rolar
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            const currentScrollPos = window.pageYOffset;
+            const header = document.getElementById("header");
+            if (prevScrollpos > currentScrollPos) {
+                header.style.top = "0";
+            } else {
+                header.style.top = "-80px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+</html>
