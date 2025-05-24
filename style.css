@@ -104,7 +104,7 @@ footer p {
 }
 
 .galeria {
-    display: flex;
+    display:grid;
     gap: 10px;
     justify-content: center;
     align-items: flex-start;
