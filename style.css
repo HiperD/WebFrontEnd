@@ -23,14 +23,41 @@ header {
 }
 
 .navbar {
-    font-size: 30;
+    position: relative; /* Referência para posicionamento absoluto do menu */
     display: flex;
-    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    height: 30px; /* Ajuste conforme a altura desejada */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;    
+    border-radius: 30%;
+}
+
+.logo a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     gap: 1.5rem;
 }
 
-.navbar a {
-    
+.menu a {
     color: #f0f0f0;
     text-decoration: none;
     font-weight: bold;
@@ -61,13 +88,14 @@ main {
 .nave p {
     text-align: center;
     max-width: 1200px;
-    margin: 0 auto 1rem auto; /* Centraliza o bloco e adiciona margem inferior */
+    margin: 0 auto 1rem auto;
     color: #ccc;
 }
+
 .nave ul {
     text-align: left;
     max-width: 1100px;
-    margin: 0 auto 1rem auto; /* Centraliza o bloco e adiciona margem inferior */
+    margin: 0 auto 1rem auto;
     color: #ccc;
 }
 
@@ -104,7 +132,7 @@ footer p {
 }
 
 .galeria {
-    display:grid;
+    display: grid;
     gap: 10px;
     justify-content: center;
     align-items: flex-start;
@@ -112,19 +140,19 @@ footer p {
 }
 
 .imagem-principal img {
-    max-width: 1080px; /* Ajuste conforme o tamanho desejado */
+    max-width: 1080px;
     border-radius: 15px;
 }
 
 .mosaico {
-    align-items:center;
-    display:inline-flex;
+    align-items: center;
+    display: inline-flex;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
 .mosaico img {
-    max-width: 200px; /* Ajuste conforme o tamanho desejado */
+    max-width: 200px;
     border-radius: 10px;
 }
 
@@ -191,7 +219,7 @@ footer p {
 }
 
 .conteudo-colapsavel.ativo {
-    max-height: 3000px; /* ajuste para caber todo conteúdo */
+    max-height: 3000px;
     padding: 1rem;
 }
 
@@ -200,12 +228,13 @@ footer p {
     margin-top: 1rem;
 }
 
-.conteudo-colapsavel p{
+.conteudo-colapsavel p {
     text-align: left;
     max-width: 1200px;
-    margin: 0 auto 1rem auto; /* Centraliza o bloco e adiciona margem inferior */
+    margin: 0 auto 1rem auto;
     color: #ccc;
-} 
+}
+
 .conteudo-colapsavel li {
     color: #ccc;
     margin-bottom: 0.5rem;
