@@ -24,6 +24,16 @@
                 <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
                 <a style="color:rgb(192, 197, 124);">Hull C</a>
             </div>
+            <selection id="teste">
+                <div class="custom-audio-player">
+                    <button id="playPause">▶</button>
+                    <input type="range" id="progress" value="0" min="0" max="100">
+                </div>
+                <audio id="myAudio" autoplay>
+                    <source src="Hull_C/Hull_C.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </selection>
         </nav>
     </header>
 
@@ -167,6 +177,43 @@
         }
         prevScrollpos = currentScrollPos;
     }
+    const audio = document.getElementById('myAudio');
+        const playPauseBtn = document.getElementById('playPause');
+        const progress = document.getElementById('progress');
+        audio.volume = 0.1;
+
+        // Atualiza o estado visual do botão
+        function updateButton() {
+            playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
+        }
+
+        // Evento de clique para play/pause
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+
+        // Eventos do áudio para atualizar o botão automaticamente
+        audio.addEventListener('play', updateButton);
+        audio.addEventListener('pause', updateButton);
+
+        // Atualiza a barra de progresso
+        audio.addEventListener('timeupdate', () => {
+            progress.value = (audio.currentTime / audio.duration) * 100;
+        });
+
+        // Avançar/retroceder pela barra
+        progress.addEventListener('input', () => {
+            audio.currentTime = (progress.value / 100) * audio.duration;
+        });
+
+        // Garante que o botão reflita o estado inicial ao carregar
+        window.addEventListener('DOMContentLoaded', () => {
+            updateButton();
+        });
 </script>
 
 </body>
