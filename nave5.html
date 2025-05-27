@@ -8,19 +8,6 @@
     <link rel="shortcut icon" href="navescitizen.png">
 </head>
 
-<script>
-function toggleColapsar() {
-    const conteudo = document.getElementById("conteudoColapsavel");
-    conteudo.classList.toggle("ativo");
-    const btn = document.querySelector(".btn-colapsar");
-    if (conteudo.classList.contains("ativo")) {
-        btn.textContent = "Esconder Especificações";
-    } else {
-        btn.textContent = "Mostrar Especificações";
-    }
-}
-</script>
-
 <body>
 
     <header id="header">
@@ -126,6 +113,17 @@ function toggleColapsar() {
     </footer>
 
 <script>
+    function toggleColapsar() {
+        const conteudo = document.getElementById("conteudoColapsavel");
+        conteudo.classList.toggle("ativo");
+        const btn = document.querySelector(".btn-colapsar");
+        if (conteudo.classList.contains("ativo")) {
+            btn.textContent = "Esconder Especificações";
+        } else {
+            btn.textContent = "Mostrar Especificações";
+        }
+    }  
+
     const imagens = [
         "Hull_C/img1.png",
         "Hull_C/img2.png",

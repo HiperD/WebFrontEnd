@@ -127,6 +127,17 @@ function toggleColapsar() {
     </footer>
 
 <script>
+    function toggleColapsar() {
+        const conteudo = document.getElementById("conteudoColapsavel");
+        conteudo.classList.toggle("ativo");
+        const btn = document.querySelector(".btn-colapsar");
+        if (conteudo.classList.contains("ativo")) {
+            btn.textContent = "Esconder Especificações";
+        } else {
+            btn.textContent = "Mostrar Especificações";
+        }
+    }  
+    
     const imagens = [
         "Idris_M/img1.png",
         "Idris_M/img2.jpg",
