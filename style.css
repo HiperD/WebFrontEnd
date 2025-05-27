@@ -239,3 +239,27 @@ footer p {
     color: #ccc;
     margin-bottom: 0.5rem;
 }
+
+#teste {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* 🔑 Empurra o player para o canto direito */
+}
+
+.custom-audio-player {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espaço entre botão e barra de progresso */
+}
+
+#playPause {
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#progress {
+    width: 100px; /* Ajuste conforme desejar */
+}

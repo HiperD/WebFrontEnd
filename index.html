@@ -8,7 +8,6 @@
     <link rel="shortcut icon" href="navescitizen.png" style="border-radius: 50%;">
 </head>
 <body>
-
     <!-- Menu de navegação -->
     <header id="header">
         <nav class="navbar">
@@ -23,6 +22,16 @@
                 <a href="#nave4">Reclaimer</a>
                 <a href="#nave5">Hull C</a>
             </div>
+            <selection id="teste">
+                <div class="custom-audio-player">
+                    <button id="playPause">▶</button>
+                    <input type="range" id="progress" value="0" min="0" max="100">
+                </div>
+                <audio id="myAudio" muted>
+                    <source src="Atomos.mp3" type="audio/mpeg">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </selection>
         </nav>
     </header>
 
@@ -70,7 +79,7 @@
             <h2>Hull C</h2>
             <p>A Hull C é a nave de transporte de carga modular mais icônica da série Hull fabricada pela Musashi Industrial and Starflight Concern (MISC). Reconhecida como o padrão da indústria para transporte de mercadorias em larga escala.</p>
             <a href="nave5.html" class="btn">Saiba mais</a>
-        </section>
+        </section>  
     </main>
 
     <footer>
@@ -79,7 +88,7 @@
             <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
         </div>
         <div>
-            <h3>Onde estamos</h3>
+            <h3>Onde somos</h3>
             <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
             <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
             <p>Redes sociais: Spectrum - @navescitizen_area18</p>
@@ -107,6 +116,32 @@
             }
             prevScrollpos = currentScrollPos;
         }
+
+        const audio = document.getElementById('myAudio');
+        const playPauseBtn = document.getElementById('playPause');
+        const progress = document.getElementById('progress');
+        audio.volume = 0.1;
+
+        // Play/Pause
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.textContent = '⏹';
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = '▶';
+            }
+        });
+
+        // Atualiza a barra
+        audio.addEventListener('timeupdate', () => {
+            progress.value = (audio.currentTime / audio.duration) * 100;
+        });
+
+        // avançar/retroceder
+        progress.addEventListener('input', () => {
+            audio.currentTime = (progress.value / 100) * audio.duration;
+        });
     </script>
 </body>
 </html>
