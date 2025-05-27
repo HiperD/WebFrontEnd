@@ -37,48 +37,48 @@
 
     <main>
         <section id="nave1" class="nave">
-            <a href="nave1.html">
+            <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">
                 <img src="Idris_M\img1.png" alt="Idris M">
             </a>
             <h2>Idris M</h2>
             <p>A Idris-M é uma fragata de uso militar desenvolvida pela Aegis Dynamics. Originalmente projetada para as Forças de Defesa da UEE, é uma das maiores e mais poderosas naves capitais que podem ser operadas por civis, ideal para combates de grande escala, patrulhas e escoltas.</p> 
-            <a href="nave1.html" class="btn">Saiba mais</a>
+            <a href="https://hiperd.github.io/WebFrontEnd/Idris-M" class="btn">Saiba mais</a>
         </section>
 
         <section id="nave2" class="nave">
-            <a href="nave2.html">
+            <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">
                 <img src="Hammerhead\img1.png" alt="Hammerhead">
             </a>
             <h2>Hammerhead</h2>
             <p>A Hammerhead é uma corveta de patrulha pesada fabricada pela Anvil Aerospace. Projetada para defesa de frotas e operações de escolta, se destaca por seu impressionante poder de fogo, ideal para missões de segurança, bloqueio e patrulhamento de zonas de risco elevado.</p>
-            <a href="nave2.html" class="btn">Saiba mais</a>
+            <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead" class="btn">Saiba mais</a>
         </section>
 
         <section id="nave3" class="nave">
-            <a href="nave3.html">
+            <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">
                 <img src="890_Jump\img1.jpg" alt="890 Jump">
             </a>
             <h2>890 Jump</h2>
             <p>A Origin 890 Jump é uma superiate interestelar de luxo fabricada pela Origin Jumpworks, projetada para proporcionar uma experiência de viagem opulenta através dos sistemas estelares.</p>
-            <a href="nave3.html" class="btn">Saiba mais</a>
+            <a href="https://hiperd.github.io/WebFrontEnd/890-Jump" class="btn">Saiba mais</a>
         </section>
 
         <section id="nave4" class="nave">
-            <a href="nave4.html">
+            <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">
                 <img src="Reclaimer\img1.jpg" alt="Reclaimer">
             </a>
             <h2>Reclaimer</h2>
             <p>A Reclaimer é uma nave industrial pesada, especializada em recuperação espacial (salvage), fabricada pela Aegis Dynamics. Projetada para ser uma das mais eficientes plataformas de recuperação de naves e destroços no universo.</p>
-            <a href="nave4.html" class="btn">Saiba mais</a>
+            <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer" class="btn">Saiba mais</a>
         </section>
 
         <section id="nave5" class="nave">
-            <a href="nave5.html">
+            <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">
                 <img src="Hull_C\img1.png" alt="Hull_C">
             </a>
             <h2>Hull C</h2>
             <p>A Hull C é a nave de transporte de carga modular mais icônica da série Hull fabricada pela Musashi Industrial and Starflight Concern (MISC). Reconhecida como o padrão da indústria para transporte de mercadorias em larga escala.</p>
-            <a href="nave5.html" class="btn">Saiba mais</a>
+            <a href="https://hiperd.github.io/WebFrontEnd/Hull-C" class="btn">Saiba mais</a>
         </section>  
     </main>
 
@@ -122,25 +122,37 @@
         const progress = document.getElementById('progress');
         audio.volume = 0.1;
 
-        // Play/Pause
+        // Atualiza o estado visual do botão
+        function updateButton() {
+            playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
+        }
+
+        // Evento de clique para play/pause
         playPauseBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.play();
-                playPauseBtn.textContent = '⏹';
             } else {
                 audio.pause();
-                playPauseBtn.textContent = '▶';
             }
         });
 
-        // Atualiza a barra
+        // Eventos do áudio para atualizar o botão automaticamente
+        audio.addEventListener('play', updateButton);
+        audio.addEventListener('pause', updateButton);
+
+        // Atualiza a barra de progresso
         audio.addEventListener('timeupdate', () => {
             progress.value = (audio.currentTime / audio.duration) * 100;
         });
 
-        // avançar/retroceder
+        // Avançar/retroceder pela barra
         progress.addEventListener('input', () => {
             audio.currentTime = (progress.value / 100) * audio.duration;
+        });
+
+        // Garante que o botão reflita o estado inicial ao carregar
+        window.addEventListener('DOMContentLoaded', () => {
+            updateButton();
         });
     </script>
 </body>
