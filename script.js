@@ -1,8 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-    updateMenu();
-    removeMenuIfNeeded();
-    atualizarGaleria();
-    updateButton();
+    // Cria o botão de voltar
     const menuHTML = `
         <div class="menu" id="navMenu">
             <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
@@ -88,10 +85,9 @@ window.addEventListener('DOMContentLoaded', function() {
     atualizarGaleria();
     updateButton();
     
+    // Gerar lista de imagens com base na pasta
     const pathParts = window.location.pathname.split('/');
     const folder = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
-
-    // Gerar lista de imagens com base na pasta
     const imagens = [
         `${folder}/img1.png`,
         `${folder}/img2.png`,
@@ -99,9 +95,7 @@ window.addEventListener('DOMContentLoaded', function() {
         `${folder}/img4.png`,
         `${folder}/img5.png`
     ];
-
     let indice = 0;
-
     function atualizarGaleria() {
         document.getElementById("imagemPrincipal").src = imagens[indice];
         const mosaico = document.getElementById("mosaico");
