@@ -199,4 +199,18 @@ window.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('DOMContentLoaded', () => {
         updateButton();
     });
+    // Eventos dos botões de troca de imagem
+    const btnAnterior = document.getElementById('btnAnterior');
+    const btnProximo = document.getElementById('btnProximo');
+    if (btnAnterior && btnProximo) {
+        btnAnterior.addEventListener('click', () => trocarImagem(-1));
+        btnProximo.addEventListener('click', () => trocarImagem(1));
+    }
+
+    // Evento do botão colapsar
+    const btnColapsar = document.getElementById('btnColapsar');
+    if (btnColapsar) {
+        btnColapsar.addEventListener('click', toggleColapsar);
+    }
 });
+
