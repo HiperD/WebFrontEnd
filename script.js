@@ -1,4 +1,8 @@
 window.addEventListener('DOMContentLoaded', function() {
+    updateMenu();
+    removeMenuIfNeeded();
+    atualizarGaleria();
+    updateButton();
     const menuHTML = `
         <div class="menu" id="navMenu">
             <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
