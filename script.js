@@ -91,14 +91,6 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }  
     
-    const imagens = [
-        "Idris_M/img1.png",
-        "Idris_M/img2.jpg",
-        "Idris_M/img3.png",
-        "Idris_M/img4.png",
-        "Idris_M/img5.jpg"
-    ];
-    let indice = 0;
     function atualizarGaleria() {
         document.getElementById("imagemPrincipal").src = imagens[indice];
         const mosaico = document.getElementById("mosaico");
@@ -111,12 +103,15 @@ window.addEventListener('DOMContentLoaded', function() {
             mosaico.appendChild(img);
         }
     }
+
     function trocarImagem(direcao) {
         indice = (indice + direcao + imagens.length) % imagens.length;
         atualizarGaleria();
     }
+
+    // Inicializar galeria
     atualizarGaleria();
-    
+
     // Troca automática a cada 3 segundos
     setInterval(() => {
         trocarImagem(1);
