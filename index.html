@@ -16,13 +16,6 @@
                     <img src="navescitizen.png" alt="Naves Citizen Icon">
                     <a>Naves Citizen</a>
                 </div>
-                <div class="menu" id="navMenu">
-                    <a href="#nave1">Idris M</a>
-                    <a href="#nave2">Hammerhead</a>
-                    <a href="#nave3">890 Jump</a>
-                    <a href="#nave4">Reclaimer</a>
-                    <a href="#nave5">Hull C</a>
-                </div>
                 <selection id="teste">
                     <div class="custom-audio-player">
                         <button id="playPause">▶</button>
@@ -104,102 +97,6 @@
             </div>
         </footer>
 
-        <script>
-            const menuHTML = `
-                <div class="menu" id="navMenu">
-                    <a href="#nave1">Idris M</a>
-                    <a href="#nave2">Hammerhead</a>
-                    <a href="#nave3">890 Jump</a>
-                    <a href="#nave4">Reclaimer</a>
-                    <a href="#nave5">Hull C</a>
-                </div>
-            `;
-
-            function updateMenu() {
-                const navbar = document.querySelector('.navbar');
-                const existingMenu = document.getElementById('navMenu');
-
-                if (window.innerWidth < 910) {
-                    if (existingMenu) {
-                        existingMenu.remove();
-                    }
-                } else {
-                    if (!existingMenu) {
-                        // Insere o menu antes do <selection> (áudio)
-                        const audioSection = document.getElementById('teste');
-                        if (audioSection) {
-                            audioSection.insertAdjacentHTML('beforebegin', menuHTML);
-                        }
-                    }
-                }
-            }
-
-            window.addEventListener('load', updateMenu);
-            window.addEventListener('resize', updateMenu);
-
-            function removeMenuIfNeeded() {
-                const menu = document.getElementById('navMenu');
-                if (window.innerWidth < 910 && menu) {
-                    menu.remove();
-                }
-            }
-
-            // Verifica ao carregar a página
-            window.addEventListener('load', removeMenuIfNeeded);
-
-            // Verifica ao redimensionar
-            window.addEventListener('resize', removeMenuIfNeeded);
-            
-            // Esconde o menu ao rolar
-            let prevScrollpos = window.pageYOffset;
-            window.onscroll = function() {
-                const currentScrollPos = window.pageYOffset;
-                const header = document.getElementById("header");
-                if (prevScrollpos > currentScrollPos) {
-                    header.style.top = "0";
-                } else {
-                    header.style.top = "-80px";
-                }
-                prevScrollpos = currentScrollPos;
-            }
-
-            const audio = document.getElementById('myAudio');
-            const playPauseBtn = document.getElementById('playPause');
-            const progress = document.getElementById('progress');
-            audio.volume = 0.1;
-
-            // Atualiza o estado visual do botão
-            function updateButton() {
-                playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
-            }
-
-            // Evento de clique para play/pause
-            playPauseBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play();
-                } else {
-                    audio.pause();
-                }
-            });
-
-            // Eventos do áudio para atualizar o botão automaticamente
-            audio.addEventListener('play', updateButton);
-            audio.addEventListener('pause', updateButton);
-
-            // Atualiza a barra de progresso
-            audio.addEventListener('timeupdate', () => {
-                progress.value = (audio.currentTime / audio.duration) * 100;
-            });
-
-            // Avançar/retroceder pela barra
-            progress.addEventListener('input', () => {
-                audio.currentTime = (progress.value / 100) * audio.duration;
-            });
-
-            // Garante que o botão reflita o estado inicial ao carregar
-            window.addEventListener('DOMContentLoaded', () => {
-                updateButton();
-            });
-        </script>
+        <script src="scriptStart.js"></script>
     </body>
 </html>
