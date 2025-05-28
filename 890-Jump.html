@@ -139,6 +139,7 @@
             function updateMenu() {
                 const navbar = document.querySelector('.navbar');
                 const existingMenu = document.getElementById('navMenu');
+                const backBtn = document.getElementById('backBtn');
 
                 if (window.innerWidth < 910) {
                     if (existingMenu) {
@@ -151,6 +152,13 @@
                         if (audioSection) {
                             audioSection.insertAdjacentHTML('beforebegin', menuHTML);
                         }
+                    }
+                }
+                if (backBtn) {
+                    if (window.innerWidth <= 910) {
+                        backBtn.style.display = "block";
+                    } else {
+                        backBtn.style.display = "none";
                     }
                 }
             }

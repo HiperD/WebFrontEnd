@@ -270,7 +270,7 @@ footer p {
     top: 80px;
     left: 20px;
     z-index: 999;
-    background-color: #0d6efd; /* azul moderno */
+    background-color: #002A52; /* azul moderno */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -282,7 +282,7 @@ footer p {
 }
 
 #backBtn:hover {
-    background-color: #0b5ed7;
+    background-color: #002A52;
     transform: scale(1.05);
     transition: top 0.3s;
 }
