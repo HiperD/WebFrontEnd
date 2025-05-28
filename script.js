@@ -91,6 +91,20 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }  
     
+    const pathParts = window.location.pathname.split('/');
+    const folder = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
+
+    // Gerar lista de imagens com base na pasta
+    const imagens = [
+        `${folder}/img1.png`,
+        `${folder}/img2.png`,
+        `${folder}/img3.png`,
+        `${folder}/img4.png`,
+        `${folder}/img5.png`
+    ];
+
+    let indice = 0;
+
     function atualizarGaleria() {
         document.getElementById("imagemPrincipal").src = imagens[indice];
         const mosaico = document.getElementById("mosaico");
