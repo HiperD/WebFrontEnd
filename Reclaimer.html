@@ -1,232 +1,286 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>NavesCitizen - Reclaimer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="navescitizen.png">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>NavesCitizen - Reclaimer</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="navescitizen.png">
+    </head>
 
-<body>
+    <body>
 
-    <header id="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="navescitizen.png" alt="Naves Citizen Icon">
-                <a>Naves Citizen</a>
-            </div>
-            <div class="menu">
-                <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
-                <a style="color:rgb(192, 197, 124);">Reclaimer</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
-            </div>
-            <selection id="teste">
-                <div class="custom-audio-player">
-                    <button id="playPause">▶</button>
-                    <input type="range" id="progress" value="0" min="0" max="100">
+        <header id="header">
+            <nav class="navbar">
+                <button id="backBtn" onclick="history.back()">Voltar</button>
+                <div class="logo">
+                    <img src="navescitizen.png" alt="Naves Citizen Icon">
+                    <a>Naves Citizen</a>
                 </div>
-                <audio id="myAudio" autoplay>
-                    <source src="Reclaimer/Reclaimer.mp3" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-            </selection>
-        </nav>
-    </header>
-
-    <main>
-        <section class="nave">
-            <h2>Reclaimer</h2>
-            <p>A Reclaimer é uma nave industrial pesada, especializada em recuperação espacial (salvage), fabricada pela Aegis Dynamics. Projetada para ser uma das mais eficientes plataformas de recuperação de naves e destroços no universo, combinando robustez estrutural, capacidade de carga e sistemas avançados de processamento de materiais.</p>
-            <div class="galeria">
-                <div class="imagem-principal">
-                    <img id="imagemPrincipal" src="Reclaimer\img1.png" alt="Imagem Principal da Nave">
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a style="color:rgb(192, 197, 124);">Reclaimer</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
                 </div>
-                <div class="mosaico" id="mosaico">
+                <selection id="teste">
+                    <div class="custom-audio-player">
+                        <button id="playPause">▶</button>
+                        <input type="range" id="progress" value="0" min="0" max="100">
+                    </div>
+                    <audio id="myAudio" autoplay>
+                        <source src="Reclaimer/Reclaimer.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </selection>
+            </nav>
+        </header>
+
+        <main>
+            <section class="nave">
+                <h2>Reclaimer</h2>
+                <p>A Reclaimer é uma nave industrial pesada, especializada em recuperação espacial (salvage), fabricada pela Aegis Dynamics. Projetada para ser uma das mais eficientes plataformas de recuperação de naves e destroços no universo, combinando robustez estrutural, capacidade de carga e sistemas avançados de processamento de materiais.</p>
+                <div class="galeria">
+                    <div class="imagem-principal">
+                        <img id="imagemPrincipal" src="Reclaimer\img1.png" alt="Imagem Principal da Nave">
+                    </div>
+                    <div class="mosaico" id="mosaico">
+                    </div>
                 </div>
-            </div>
 
-            <div class="botoes-troca">
-                <button onclick="trocarImagem(-1)"><</button>
-                <button onclick="trocarImagem(1)">></button>
-            </div>
-
-           <section class="colapsavel">
-                <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
-                <div class="conteudo-colapsavel" id="conteudoColapsavel">
-                    <h3>Especificações gerais:</h3>
-                    <ul>
-                        <li><strong>Tipo:</strong> Nave industrial pesada de reciclagem</li>
-                        <li><strong>Fabricante:</strong> Aegis Dynamics</li>
-                        <li><strong>Comprimento:</strong> Aproximadamente 155 metros</li>
-                        <li><strong>Massa:</strong> 9.757.854kg ou 9.758 Toneladas</li>
-                        <li><strong>Tripulação mínima:</strong> 4 pessoas</li>
-                        <li><strong>Tripulação ideal:</strong> 6 à 8 pessoas</li>
-                        <li><strong>Capacidade de hangar:</strong> Não possui hangares para armazenagem de naves ou veículos, voltados apenas para armazenagem de carga, equivalentes a 420 SCU</li>
-                        <li><strong>Armamento principal:</strong> 4 torres tripuladas com canhões de energia</li>
-                        <li><strong>Armamento secundário:</strong> Mísseis de médio alcance e sistemas de defesa automática</li>
-                    </ul>
-
-                    <h3>Design e estrutura:</h3>
-                    <p>O design da Reclaimer segue o estilo clássico e robusto da Aegis Dynamics, com foco na funcionalidade sobre a estética. Sua estrutura possui braços mecânicos articulados e garras de salvamento, que podem cortar, desmontar e coletar grandes seções de naves destruídas ou abandonadas.</p>
-                    <p>A parte frontal da nave é dominada por um cortador de feixe e um laser de salvamento, enquanto sua parte traseira abriga compartimentos de carga, tanques de combustível e sistemas de refino. O interior é funcional, incluindo:</p>
-                    <ul>
-                        <li>Sala de operações.</li>
-                        <li>Posto de comando com visão panorâmica.</li>
-                        <li>Dormitórios e refeitório para a tripulação.</li>
-                    </ul>
-
-                    <h3>Equipamentos e Sistemas:</h3>
-                    <p><strong>Braços mecânicos:</strong>Equipados com garras hidráulicas capazes de realizar desmontagens pesadas ou manipular partes de naves de grande porte.</p>
-                    <p><strong>Laser de Salvamento:</strong>Sistema de corte preciso, usado para separar partes metálicas e extrair materiais valiosos das carcaças espaciais.</p>
-                    <p><strong>Processadores Industriais:</strong>Permitem a trituração e o refino de sucatas diretamente a bordo, otimizando o espaço de carga e aumentando o valor dos materiais coletados.</p>
-                    
-                    <h3>Armamentos e Defesa:</h3>
-                    <p>Embora não seja uma nave de combate, a Reclaimer possui sistemas defensivos suficientes para se proteger em ambientes hostis:</p>
-                    <ul>
-                        <li><strong>Torres automáticas:</strong>Defendem a nave contra pequenos agressores ou piratas.</li>
-                        <li><strong>Blindagem pesada:</strong>Estrutura reforçada para resistir a impactos de destroços e eventuais ataques.</li>
-                        <li><strong>Contramedidas eletrônicas:</strong>Sistemas de chaff e flares para defesa antimíssil.</li>
-                    </ul>
-
-
-                    <h3>Função e Utilização:</h3>
-                    <p>A Reclaimer é fundamental para operações de:</p>
-                    <ul>
-                        <li><strong>Salvamento de destroços espaciais.</strong></li>
-                        <li><strong>Recuperação de materiais</strong> pós-batalha ou em zonas de guerra.</li>
-                        <li><strong>Exploração de áreas perigosas</strong> onde naves menores não sobreviveriam.</li>
-                        <li><strong>Operações comerciais</strong> envolvendo venda de metais e componentes recuperados.</li>
-                    </ul>
-
-                    <h3>Curiosidades:</h3>
-                    <p>A Reclaimer é uma das poucas naves civis autorizadas a operar braços industriais de grande porte fora de zonas industriais regulamentadas.</p>
-                    <p>A Aegis Dynamics a projetou com foco na durabilidade extrema, permitindo anos de operação com manutenção mínima.</p>
-                    <p>Sua presença em campo geralmente indica a ocorrência recente de batalhas ou desastres espaciais.</p>
+                <div class="botoes-troca">
+                    <button onclick="trocarImagem(-1)"><</button>
+                    <button onclick="trocarImagem(1)">></button>
                 </div>
+
+            <section class="colapsavel">
+                    <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
+                    <div class="conteudo-colapsavel" id="conteudoColapsavel">
+                        <h3>Especificações gerais:</h3>
+                        <ul>
+                            <li><strong>Tipo:</strong> Nave industrial pesada de reciclagem</li>
+                            <li><strong>Fabricante:</strong> Aegis Dynamics</li>
+                            <li><strong>Comprimento:</strong> Aproximadamente 155 metros</li>
+                            <li><strong>Massa:</strong> 9.757.854kg ou 9.758 Toneladas</li>
+                            <li><strong>Tripulação mínima:</strong> 4 pessoas</li>
+                            <li><strong>Tripulação ideal:</strong> 6 à 8 pessoas</li>
+                            <li><strong>Capacidade de hangar:</strong> Não possui hangares para armazenagem de naves ou veículos, voltados apenas para armazenagem de carga, equivalentes a 420 SCU</li>
+                            <li><strong>Armamento principal:</strong> 4 torres tripuladas com canhões de energia</li>
+                            <li><strong>Armamento secundário:</strong> Mísseis de médio alcance e sistemas de defesa automática</li>
+                        </ul>
+
+                        <h3>Design e estrutura:</h3>
+                        <p>O design da Reclaimer segue o estilo clássico e robusto da Aegis Dynamics, com foco na funcionalidade sobre a estética. Sua estrutura possui braços mecânicos articulados e garras de salvamento, que podem cortar, desmontar e coletar grandes seções de naves destruídas ou abandonadas.</p>
+                        <p>A parte frontal da nave é dominada por um cortador de feixe e um laser de salvamento, enquanto sua parte traseira abriga compartimentos de carga, tanques de combustível e sistemas de refino. O interior é funcional, incluindo:</p>
+                        <ul>
+                            <li>Sala de operações.</li>
+                            <li>Posto de comando com visão panorâmica.</li>
+                            <li>Dormitórios e refeitório para a tripulação.</li>
+                        </ul>
+
+                        <h3>Equipamentos e Sistemas:</h3>
+                        <p><strong>Braços mecânicos:</strong>Equipados com garras hidráulicas capazes de realizar desmontagens pesadas ou manipular partes de naves de grande porte.</p>
+                        <p><strong>Laser de Salvamento:</strong>Sistema de corte preciso, usado para separar partes metálicas e extrair materiais valiosos das carcaças espaciais.</p>
+                        <p><strong>Processadores Industriais:</strong>Permitem a trituração e o refino de sucatas diretamente a bordo, otimizando o espaço de carga e aumentando o valor dos materiais coletados.</p>
+                        
+                        <h3>Armamentos e Defesa:</h3>
+                        <p>Embora não seja uma nave de combate, a Reclaimer possui sistemas defensivos suficientes para se proteger em ambientes hostis:</p>
+                        <ul>
+                            <li><strong>Torres automáticas:</strong>Defendem a nave contra pequenos agressores ou piratas.</li>
+                            <li><strong>Blindagem pesada:</strong>Estrutura reforçada para resistir a impactos de destroços e eventuais ataques.</li>
+                            <li><strong>Contramedidas eletrônicas:</strong>Sistemas de chaff e flares para defesa antimíssil.</li>
+                        </ul>
+
+
+                        <h3>Função e Utilização:</h3>
+                        <p>A Reclaimer é fundamental para operações de:</p>
+                        <ul>
+                            <li><strong>Salvamento de destroços espaciais.</strong></li>
+                            <li><strong>Recuperação de materiais</strong> pós-batalha ou em zonas de guerra.</li>
+                            <li><strong>Exploração de áreas perigosas</strong> onde naves menores não sobreviveriam.</li>
+                            <li><strong>Operações comerciais</strong> envolvendo venda de metais e componentes recuperados.</li>
+                        </ul>
+
+                        <h3>Curiosidades:</h3>
+                        <p>A Reclaimer é uma das poucas naves civis autorizadas a operar braços industriais de grande porte fora de zonas industriais regulamentadas.</p>
+                        <p>A Aegis Dynamics a projetou com foco na durabilidade extrema, permitindo anos de operação com manutenção mínima.</p>
+                        <p>Sua presença em campo geralmente indica a ocorrência recente de batalhas ou desastres espaciais.</p>
+                    </div>
+                </section>
+                <h3>Resumo:</h3>
+                <p>A Reclaimer é a maior e mais sofisticada plataforma de salvamento industrial do universo de Star Citizen, combinando poderosas ferramentas de recuperação, sistemas de processamento de materiais e defesas sólidas. Ideal para quem busca transformar o lixo espacial em lucro, ela representa a essência da engenharia pesada e utilitária, típica da Aegis Dynamics.</p>
             </section>
-            <h3>Resumo:</h3>
-            <p>A Reclaimer é a maior e mais sofisticada plataforma de salvamento industrial do universo de Star Citizen, combinando poderosas ferramentas de recuperação, sistemas de processamento de materiais e defesas sólidas. Ideal para quem busca transformar o lixo espacial em lucro, ela representa a essência da engenharia pesada e utilitária, típica da Aegis Dynamics.</p>
-        </section>
-    </main>
+        </main>
 
-    <footer>
-        <div>
-            <h3>Apresentação da empresa</h3>
-            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
-        </div>
-        <div>
-            <h3>Onde estamos</h3>
-            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
-            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
-            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
-        </div>
-        <div>
-            <h3>Quem somos</h3>
-            <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
-        </div>
-        <div>
-            <h3>Trabalhe conosco</h3>
-            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
-        </div>
-    </footer>
+        <footer>
+            <div>
+                <h3>Apresentação da empresa</h3>
+                <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+            </div>
+            <div>
+                <h3>Onde estamos</h3>
+                <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+                <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+                <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+            </div>
+            <div>
+                <h3>Quem somos</h3>
+                <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+            </div>
+            <div>
+                <h3>Trabalhe conosco</h3>
+                <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+            </div>
+        </footer>
 
-<script>
-    function toggleColapsar() {
-        const conteudo = document.getElementById("conteudoColapsavel");
-        conteudo.classList.toggle("ativo");
-        const btn = document.querySelector(".btn-colapsar");
-        if (conteudo.classList.contains("ativo")) {
-            btn.textContent = "Esconder Especificações";
-        } else {
-            btn.textContent = "Mostrar Especificações";
-        }
-    }  
-    
-    const imagens = [
-        "Reclaimer/img1.jpg",
-        "Reclaimer/img2.jpg",
-        "Reclaimer/img3.png",
-        "Reclaimer/img4.jpeg",
-        "Reclaimer/img5.png"
-    ];
-    let indice = 0;
-    function atualizarGaleria() {
-        document.getElementById("imagemPrincipal").src = imagens[indice];
-        const mosaico = document.getElementById("mosaico");
-        mosaico.innerHTML = "";
-        for (let i = 1; i < 5; i++) {
-            let imgIndex = (indice + i) % imagens.length;
-            const img = document.createElement("img");
-            img.src = imagens[imgIndex];
-            img.alt = `Imagem ${imgIndex + 1} da Nave`;
-            mosaico.appendChild(img);
-        }
-    }
-    function trocarImagem(direcao) {
-        indice = (indice + direcao + imagens.length) % imagens.length;
-        atualizarGaleria();
-    }
-    atualizarGaleria();
-    
-    // Troca automática a cada 3 segundos
-    setInterval(() => {
-        trocarImagem(1);
-    }, 3000);
+        <script>
+            const menuHTML = `
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a style="color:rgb(192, 197, 124);">Reclaimer</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
+                </div>
+            `;
 
-    // Esconde o menu ao rolar
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        const currentScrollPos = window.pageYOffset;
-        const header = document.getElementById("header");
-        if (prevScrollpos > currentScrollPos) {
-            header.style.top = "0";
-        } else {
-            header.style.top = "-80px";
-        }
-        prevScrollpos = currentScrollPos;
-    }
-    const audio = document.getElementById('myAudio');
-        const playPauseBtn = document.getElementById('playPause');
-        const progress = document.getElementById('progress');
-        audio.volume = 0.1;
+            function updateMenu() {
+                const navbar = document.querySelector('.navbar');
+                const existingMenu = document.getElementById('navMenu');
 
-        // Atualiza o estado visual do botão
-        function updateButton() {
-            playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
-        }
-
-        // Evento de clique para play/pause
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
+                if (window.innerWidth < 910) {
+                    if (existingMenu) {
+                        existingMenu.remove();
+                    }
+                } else {
+                    if (!existingMenu) {
+                        // Insere o menu antes do <selection> (áudio)
+                        const audioSection = document.getElementById('teste');
+                        if (audioSection) {
+                            audioSection.insertAdjacentHTML('beforebegin', menuHTML);
+                        }
+                    }
+                }
             }
-        });
 
-        // Eventos do áudio para atualizar o botão automaticamente
-        audio.addEventListener('play', updateButton);
-        audio.addEventListener('pause', updateButton);
+            window.addEventListener('load', updateMenu);
+            window.addEventListener('resize', updateMenu);
 
-        // Atualiza a barra de progresso
-        audio.addEventListener('timeupdate', () => {
-            progress.value = (audio.currentTime / audio.duration) * 100;
-        });
+            function removeMenuIfNeeded() {
+                const menu = document.getElementById('navMenu');
+                if (window.innerWidth < 910 && menu) {
+                    menu.remove();
+                }
+            }
 
-        // Avançar/retroceder pela barra
-        progress.addEventListener('input', () => {
-            audio.currentTime = (progress.value / 100) * audio.duration;
-        });
+            // Verifica ao carregar a página
+            window.addEventListener('load', removeMenuIfNeeded);
 
-        // Garante que o botão reflita o estado inicial ao carregar
-        window.addEventListener('DOMContentLoaded', () => {
-            updateButton();
-        });
-</script>
+            // Verifica ao redimensionar
+            window.addEventListener('resize', removeMenuIfNeeded);
 
-</body>
+            function toggleColapsar() {
+                const conteudo = document.getElementById("conteudoColapsavel");
+                conteudo.classList.toggle("ativo");
+                const btn = document.querySelector(".btn-colapsar");
+                if (conteudo.classList.contains("ativo")) {
+                    btn.textContent = "Esconder Especificações";
+                } else {
+                    btn.textContent = "Mostrar Especificações";
+                }
+            }  
+            
+            const imagens = [
+                "Reclaimer/img1.jpg",
+                "Reclaimer/img2.jpg",
+                "Reclaimer/img3.png",
+                "Reclaimer/img4.jpeg",
+                "Reclaimer/img5.png"
+            ];
+            let indice = 0;
+            function atualizarGaleria() {
+                document.getElementById("imagemPrincipal").src = imagens[indice];
+                const mosaico = document.getElementById("mosaico");
+                mosaico.innerHTML = "";
+                for (let i = 1; i < 5; i++) {
+                    let imgIndex = (indice + i) % imagens.length;
+                    const img = document.createElement("img");
+                    img.src = imagens[imgIndex];
+                    img.alt = `Imagem ${imgIndex + 1} da Nave`;
+                    mosaico.appendChild(img);
+                }
+            }
+            function trocarImagem(direcao) {
+                indice = (indice + direcao + imagens.length) % imagens.length;
+                atualizarGaleria();
+            }
+            atualizarGaleria();
+            
+            // Troca automática a cada 3 segundos
+            setInterval(() => {
+                trocarImagem(1);
+            }, 3000);
+
+            // Esconde o menu ao rolar
+            let prevScrollpos = window.pageYOffset;
+
+            window.onscroll = function () {
+                const currentScrollPos = window.pageYOffset;
+                const header = document.getElementById("header");
+                const backBtn = document.getElementById("backBtn");
+
+                if (prevScrollpos > currentScrollPos) {
+                    // Mostra o header e o botão
+                    header.style.top = "0";
+                    if (backBtn) backBtn.style.top = "80px";
+                } else {
+                    // Esconde o header e o botão
+                    header.style.top = "-80px";
+                    if (backBtn) backBtn.style.top = "20px";
+                }
+
+                prevScrollpos = currentScrollPos;
+            }
+            const audio = document.getElementById('myAudio');
+            const playPauseBtn = document.getElementById('playPause');
+            const progress = document.getElementById('progress');
+            audio.volume = 0.1;
+
+            // Atualiza o estado visual do botão
+            function updateButton() {
+                playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
+            }
+
+            // Evento de clique para play/pause
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+
+            // Eventos do áudio para atualizar o botão automaticamente
+            audio.addEventListener('play', updateButton);
+            audio.addEventListener('pause', updateButton);
+
+            // Atualiza a barra de progresso
+            audio.addEventListener('timeupdate', () => {
+                progress.value = (audio.currentTime / audio.duration) * 100;
+            });
+
+            // Avançar/retroceder pela barra
+            progress.addEventListener('input', () => {
+                audio.currentTime = (progress.value / 100) * audio.duration;
+            });
+
+            // Garante que o botão reflita o estado inicial ao carregar
+            window.addEventListener('DOMContentLoaded', () => {
+                updateButton();
+            });
+        </script>
+
+    </body>
 </html>

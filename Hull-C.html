@@ -1,220 +1,274 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>NavesCitizen - Hull C</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="navescitizen.png">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>NavesCitizen - Hull C</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="navescitizen.png">
+    </head>
 
-<body>
+    <body>
 
-    <header id="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="navescitizen.png" alt="Naves Citizen Icon">
-                <a>Naves Citizen</a>
-            </div>
-            <div class="menu">
-                <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
-                <a style="color:rgb(192, 197, 124);">Hull C</a>
-            </div>
-            <selection id="teste">
-                <div class="custom-audio-player">
-                    <button id="playPause">▶</button>
-                    <input type="range" id="progress" value="0" min="0" max="100">
+        <header id="header">
+            <nav class="navbar">
+                <button id="backBtn" onclick="history.back()">Voltar</button>
+                <div class="logo">
+                    <img src="navescitizen.png" alt="Naves Citizen Icon">
+                    <a>Naves Citizen</a>
                 </div>
-                <audio id="myAudio" autoplay>
-                    <source src="Hull_C/Hull_C.mp3" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-            </selection>
-        </nav>
-    </header>
-
-    <main>
-        <section class="nave">
-            <h2>Hull C</h2>
-            <p>A Hull C é a nave de transporte de carga modular mais icônica da série Hull fabricada pela Musashi Industrial and Starflight Concern (MISC). Reconhecida como o padrão da indústria para transporte de mercadorias em larga escala, a Hull C combina um design inovador com uma capacidade de carga colossal, permitindo a movimentação eficiente de bens através de sistemas estelares.</p>
-            <div class="galeria">
-                <div class="imagem-principal">
-                    <img id="imagemPrincipal" src="890_Jump/img1.png" alt="Imagem Principal da Nave">
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
+                    <a style="color:rgb(192, 197, 124);">Hull C</a>
                 </div>
-                <div class="mosaico" id="mosaico">
+                <selection id="teste">
+                    <div class="custom-audio-player">
+                        <button id="playPause">▶</button>
+                        <input type="range" id="progress" value="0" min="0" max="100">
+                    </div>
+                    <audio id="myAudio" autoplay>
+                        <source src="Hull_C/Hull_C.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </selection>
+            </nav>
+        </header>
+
+        <main>
+            <section class="nave">
+                <h2>Hull C</h2>
+                <p>A Hull C é a nave de transporte de carga modular mais icônica da série Hull fabricada pela Musashi Industrial and Starflight Concern (MISC). Reconhecida como o padrão da indústria para transporte de mercadorias em larga escala, a Hull C combina um design inovador com uma capacidade de carga colossal, permitindo a movimentação eficiente de bens através de sistemas estelares.</p>
+                <div class="galeria">
+                    <div class="imagem-principal">
+                        <img id="imagemPrincipal" src="890_Jump/img1.png" alt="Imagem Principal da Nave">
+                    </div>
+                    <div class="mosaico" id="mosaico">
+                    </div>
                 </div>
-            </div>
 
-            <div class="botoes-troca">
-                <button onclick="trocarImagem(-1)"><</button>
-                <button onclick="trocarImagem(1)">></button>
-            </div>
-
-           <section class="colapsavel">
-                <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
-                <div class="conteudo-colapsavel" id="conteudoColapsavel">
-                    <h3>Especificações gerais:</h3>
-                    <ul>
-                        <li><strong>Tipo:</strong> Nave de transporte pesado</li>
-                        <li><strong>Fabricante:</strong> MISC (Musashi Industrial and Starflight Concern)</li>
-                        <li><strong>Comprimento:</strong> Aproximadamente 125 metros</li>
-                        <li><strong>Massa:</strong> 44.237.159kg ou 44.237 Toneladas</li>
-                        <li><strong>Tripulação mínima:</strong> 1 pessoas</li>
-                        <li><strong>Tripulação ideal:</strong> 2 a 3 pessoas</li>
-                        <li><strong>Capacidade de carga:</strong> 4608 SCU</li>
-                        <li><strong>Armamento principal:</strong> 4 torres tripuladas com canhões de energia</li>
-                    </ul>
-
-                    <h3>Design e estrutura:</h3>
-                    <p>O design da Hull C segue a filosofia MISC de eficiência industrial e modularidade. A estrutura central é equipada com braços que se expandem quando a nave está em operação de transporte, permitindo a montagem de enormes blocos de carga em torno de seu esqueleto.</p>
-                    <p>Quando vazia ou em voo atmosférico, os braços retraem-se, reduzindo a assinatura física e facilitando o pouso em áreas apropriadas. Esta característica torna a Hull C uma nave extremamente versátil para transporte interestelar, mas limitada em aterrissagem planetária quando carregada.</p>
-                    <p>O interior da nave é funcional e projetado para suporte da tripulação durante viagens longas, incluindo:</p>
-                    <ul>
-                        <li>Cabines de descanso.</li>
-                        <li>Área de controle de carga.</li>
-                        <li>Ponte de comando com sistemas de navegação automatizados.</li>
-                    </ul>
-
-                    <h3>Armamento e Defesa:</h3>
-                    <p>Apesar de ser uma nave de carga, a Hull C possui sistemas básicos de defesa:</p>
-                    <ul>
-                        <li><strong>Torres automáticas:</strong>Pequenas armas de defesa para dissuadir ataques de caças leves.</li>
-                        <li><strong>Blindagem média:</strong>Estrutura reforçada para resistir a danos ocasionais.</li>
-                        <li><strong>Contramedidas:</strong>Sistemas padrão de chaff e flares para proteção contra mísseis.</li>
-                    </ul>
-                    <p>No entanto, sua principal defesa é evitar combate, confiando na velocidade em espaço aberto e em escoltas contratadas.</p>
-
-                    <h3>Curiosidades:</h3>
-                    <p>A Hull C é considerada o "padrão industrial" para transporte de grande escala, sendo a nave mais produzida da série Hull.</p>
-                    <p>A série Hull inclui modelos menores e maiores, com a Hull A e B para cargas pequenas/médias e as Hull D e E para cargas colossais.</p>
-                    <p>A configuração modular da Hull C permite a rápida substituição de blocos de carga, agilizando operações de embarque e desembarque.</p>
-                    <p>Por seu papel no comércio, a Hull C é muitas vezes apelidada de "coluna vertebral do transporte galáctico".</p>
+                <div class="botoes-troca">
+                    <button onclick="trocarImagem(-1)"><</button>
+                    <button onclick="trocarImagem(1)">></button>
                 </div>
+
+            <section class="colapsavel">
+                    <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
+                    <div class="conteudo-colapsavel" id="conteudoColapsavel">
+                        <h3>Especificações gerais:</h3>
+                        <ul>
+                            <li><strong>Tipo:</strong> Nave de transporte pesado</li>
+                            <li><strong>Fabricante:</strong> MISC (Musashi Industrial and Starflight Concern)</li>
+                            <li><strong>Comprimento:</strong> Aproximadamente 125 metros</li>
+                            <li><strong>Massa:</strong> 44.237.159kg ou 44.237 Toneladas</li>
+                            <li><strong>Tripulação mínima:</strong> 1 pessoas</li>
+                            <li><strong>Tripulação ideal:</strong> 2 a 3 pessoas</li>
+                            <li><strong>Capacidade de carga:</strong> 4608 SCU</li>
+                            <li><strong>Armamento principal:</strong> 4 torres tripuladas com canhões de energia</li>
+                        </ul>
+
+                        <h3>Design e estrutura:</h3>
+                        <p>O design da Hull C segue a filosofia MISC de eficiência industrial e modularidade. A estrutura central é equipada com braços que se expandem quando a nave está em operação de transporte, permitindo a montagem de enormes blocos de carga em torno de seu esqueleto.</p>
+                        <p>Quando vazia ou em voo atmosférico, os braços retraem-se, reduzindo a assinatura física e facilitando o pouso em áreas apropriadas. Esta característica torna a Hull C uma nave extremamente versátil para transporte interestelar, mas limitada em aterrissagem planetária quando carregada.</p>
+                        <p>O interior da nave é funcional e projetado para suporte da tripulação durante viagens longas, incluindo:</p>
+                        <ul>
+                            <li>Cabines de descanso.</li>
+                            <li>Área de controle de carga.</li>
+                            <li>Ponte de comando com sistemas de navegação automatizados.</li>
+                        </ul>
+
+                        <h3>Armamento e Defesa:</h3>
+                        <p>Apesar de ser uma nave de carga, a Hull C possui sistemas básicos de defesa:</p>
+                        <ul>
+                            <li><strong>Torres automáticas:</strong>Pequenas armas de defesa para dissuadir ataques de caças leves.</li>
+                            <li><strong>Blindagem média:</strong>Estrutura reforçada para resistir a danos ocasionais.</li>
+                            <li><strong>Contramedidas:</strong>Sistemas padrão de chaff e flares para proteção contra mísseis.</li>
+                        </ul>
+                        <p>No entanto, sua principal defesa é evitar combate, confiando na velocidade em espaço aberto e em escoltas contratadas.</p>
+
+                        <h3>Curiosidades:</h3>
+                        <p>A Hull C é considerada o "padrão industrial" para transporte de grande escala, sendo a nave mais produzida da série Hull.</p>
+                        <p>A série Hull inclui modelos menores e maiores, com a Hull A e B para cargas pequenas/médias e as Hull D e E para cargas colossais.</p>
+                        <p>A configuração modular da Hull C permite a rápida substituição de blocos de carga, agilizando operações de embarque e desembarque.</p>
+                        <p>Por seu papel no comércio, a Hull C é muitas vezes apelidada de "coluna vertebral do transporte galáctico".</p>
+                    </div>
+                </section>
+                <h3>Resumo:</h3>
+                <p>A Hull C é a escolha definitiva para organizações, corporações e comerciantes que necessitam mover cargas de maneira eficiente e segura através de sistemas estelares. Com sua estrutura modular extensível, capacidade de carga impressionante e design otimizado para transporte espacial, ela representa o futuro do comércio interplanetário no universo de Star Citizen.</p>
+                <p>Embora não seja uma nave de combate, sua importância estratégica para a economia e infraestrutura galáctica é incomparável.</p>
             </section>
-            <h3>Resumo:</h3>
-            <p>A Hull C é a escolha definitiva para organizações, corporações e comerciantes que necessitam mover cargas de maneira eficiente e segura através de sistemas estelares. Com sua estrutura modular extensível, capacidade de carga impressionante e design otimizado para transporte espacial, ela representa o futuro do comércio interplanetário no universo de Star Citizen.</p>
-            <p>Embora não seja uma nave de combate, sua importância estratégica para a economia e infraestrutura galáctica é incomparável.</p>
-        </section>
-    </main>
+        </main>
 
-    <footer>
-        <div>
-            <h3>Apresentação da empresa</h3>
-            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
-        </div>
-        <div>
-            <h3>Onde estamos</h3>
-            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
-            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
-            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
-        </div>
-        <div>
-            <h3>Quem somos</h3>
-            <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
-        </div>
-        <div>
-            <h3>Trabalhe conosco</h3>
-            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
-        </div>
-    </footer>
+        <footer>
+            <div>
+                <h3>Apresentação da empresa</h3>
+                <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+            </div>
+            <div>
+                <h3>Onde estamos</h3>
+                <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+                <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+                <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+            </div>
+            <div>
+                <h3>Quem somos</h3>
+                <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+            </div>
+            <div>
+                <h3>Trabalhe conosco</h3>
+                <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+            </div>
+        </footer>
 
-<script>
-    function toggleColapsar() {
-        const conteudo = document.getElementById("conteudoColapsavel");
-        conteudo.classList.toggle("ativo");
-        const btn = document.querySelector(".btn-colapsar");
-        if (conteudo.classList.contains("ativo")) {
-            btn.textContent = "Esconder Especificações";
-        } else {
-            btn.textContent = "Mostrar Especificações";
-        }
-    }  
+        <script>
+            const menuHTML = `
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
+                    <a style="color:rgb(192, 197, 124);">Hull C</a>
+                </div>
+            `;
 
-    const imagens = [
-        "Hull_C/img1.png",
-        "Hull_C/img2.png",
-        "Hull_C/img3.jpg",
-        "Hull_C/img4.png",
-        "Hull_C/img5.png"
-    ];
-    let indice = 0;
-    function atualizarGaleria() {
-        document.getElementById("imagemPrincipal").src = imagens[indice];
-        const mosaico = document.getElementById("mosaico");
-        mosaico.innerHTML = "";
-        for (let i = 1; i < 5; i++) {
-            let imgIndex = (indice + i) % imagens.length;
-            const img = document.createElement("img");
-            img.src = imagens[imgIndex];
-            img.alt = `Imagem ${imgIndex + 1} da Nave`;
-            mosaico.appendChild(img);
-        }
-    }
-    function trocarImagem(direcao) {
-        indice = (indice + direcao + imagens.length) % imagens.length;
-        atualizarGaleria();
-    }
-    atualizarGaleria();
-    
-    // Troca automática a cada 3 segundos
-    setInterval(() => {
-        trocarImagem(1);
-    }, 3000);
+            function updateMenu() {
+                const navbar = document.querySelector('.navbar');
+                const existingMenu = document.getElementById('navMenu');
 
-    // Esconde o menu ao rolar
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        const currentScrollPos = window.pageYOffset;
-        const header = document.getElementById("header");
-        if (prevScrollpos > currentScrollPos) {
-            header.style.top = "0";
-        } else {
-            header.style.top = "-80px";
-        }
-        prevScrollpos = currentScrollPos;
-    }
-    const audio = document.getElementById('myAudio');
-        const playPauseBtn = document.getElementById('playPause');
-        const progress = document.getElementById('progress');
-        audio.volume = 0.1;
-
-        // Atualiza o estado visual do botão
-        function updateButton() {
-            playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
-        }
-
-        // Evento de clique para play/pause
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
+                if (window.innerWidth < 910) {
+                    if (existingMenu) {
+                        existingMenu.remove();
+                    }
+                } else {
+                    if (!existingMenu) {
+                        // Insere o menu antes do <selection> (áudio)
+                        const audioSection = document.getElementById('teste');
+                        if (audioSection) {
+                            audioSection.insertAdjacentHTML('beforebegin', menuHTML);
+                        }
+                    }
+                }
             }
-        });
 
-        // Eventos do áudio para atualizar o botão automaticamente
-        audio.addEventListener('play', updateButton);
-        audio.addEventListener('pause', updateButton);
+            window.addEventListener('load', updateMenu);
+            window.addEventListener('resize', updateMenu);
 
-        // Atualiza a barra de progresso
-        audio.addEventListener('timeupdate', () => {
-            progress.value = (audio.currentTime / audio.duration) * 100;
-        });
+            function removeMenuIfNeeded() {
+                const menu = document.getElementById('navMenu');
+                if (window.innerWidth < 910 && menu) {
+                    menu.remove();
+                }
+            }
 
-        // Avançar/retroceder pela barra
-        progress.addEventListener('input', () => {
-            audio.currentTime = (progress.value / 100) * audio.duration;
-        });
+            // Verifica ao carregar a página
+            window.addEventListener('load', removeMenuIfNeeded);
 
-        // Garante que o botão reflita o estado inicial ao carregar
-        window.addEventListener('DOMContentLoaded', () => {
-            updateButton();
-        });
-</script>
+            // Verifica ao redimensionar
+            window.addEventListener('resize', removeMenuIfNeeded);
 
-</body>
+            function toggleColapsar() {
+                const conteudo = document.getElementById("conteudoColapsavel");
+                conteudo.classList.toggle("ativo");
+                const btn = document.querySelector(".btn-colapsar");
+                if (conteudo.classList.contains("ativo")) {
+                    btn.textContent = "Esconder Especificações";
+                } else {
+                    btn.textContent = "Mostrar Especificações";
+                }
+            }  
+
+            const imagens = [
+                "Hull_C/img1.png",
+                "Hull_C/img2.png",
+                "Hull_C/img3.jpg",
+                "Hull_C/img4.png",
+                "Hull_C/img5.png"
+            ];
+            let indice = 0;
+            function atualizarGaleria() {
+                document.getElementById("imagemPrincipal").src = imagens[indice];
+                const mosaico = document.getElementById("mosaico");
+                mosaico.innerHTML = "";
+                for (let i = 1; i < 5; i++) {
+                    let imgIndex = (indice + i) % imagens.length;
+                    const img = document.createElement("img");
+                    img.src = imagens[imgIndex];
+                    img.alt = `Imagem ${imgIndex + 1} da Nave`;
+                    mosaico.appendChild(img);
+                }
+            }
+            function trocarImagem(direcao) {
+                indice = (indice + direcao + imagens.length) % imagens.length;
+                atualizarGaleria();
+            }
+            atualizarGaleria();
+            
+            // Troca automática a cada 3 segundos
+            setInterval(() => {
+                trocarImagem(1);
+            }, 3000);
+
+            // Esconde o menu ao rolar
+            let prevScrollpos = window.pageYOffset;
+
+            window.onscroll = function () {
+                const currentScrollPos = window.pageYOffset;
+                const header = document.getElementById("header");
+                const backBtn = document.getElementById("backBtn");
+
+                if (prevScrollpos > currentScrollPos) {
+                    // Mostra o header e o botão
+                    header.style.top = "0";
+                    if (backBtn) backBtn.style.top = "80px";
+                } else {
+                    // Esconde o header e o botão
+                    header.style.top = "-80px";
+                    if (backBtn) backBtn.style.top = "20px";
+                }
+
+                prevScrollpos = currentScrollPos;
+            }
+            const audio = document.getElementById('myAudio');
+            const playPauseBtn = document.getElementById('playPause');
+            const progress = document.getElementById('progress');
+            audio.volume = 0.1;
+
+            // Atualiza o estado visual do botão
+            function updateButton() {
+                playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
+            }
+
+            // Evento de clique para play/pause
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+
+            // Eventos do áudio para atualizar o botão automaticamente
+            audio.addEventListener('play', updateButton);
+            audio.addEventListener('pause', updateButton);
+
+            // Atualiza a barra de progresso
+            audio.addEventListener('timeupdate', () => {
+                progress.value = (audio.currentTime / audio.duration) * 100;
+            });
+
+            // Avançar/retroceder pela barra
+            progress.addEventListener('input', () => {
+                audio.currentTime = (progress.value / 100) * audio.duration;
+            });
+
+            // Garante que o botão reflita o estado inicial ao carregar
+            window.addEventListener('DOMContentLoaded', () => {
+                updateButton();
+            });
+        </script>
+
+    </body>
 </html>

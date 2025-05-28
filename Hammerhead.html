@@ -1,230 +1,285 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>NavesCitizen - Hammerhead</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="navescitizen.png">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>NavesCitizen - Hammerhead</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="navescitizen.png">
+    </head>
 
-<body>
+    <body>
 
-    <header id="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="navescitizen.png" alt="Naves Citizen Icon">
-                <a>Naves Citizen</a>
-            </div>
-            <div class="menu">
-                <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
-                <a style="color:rgb(192, 197, 124);">Hammerhead </a>
-                <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
-            </div>
-            <selection id="teste">
-                <div class="custom-audio-player">
-                    <button id="playPause">▶</button>
-                    <input type="range" id="progress" value="0" min="0" max="100">
+        <header id="header">
+            <nav class="navbar">
+                <button id="backBtn" onclick="history.back()">Voltar</button>
+                <div class="logo">
+                    <img src="navescitizen.png" alt="Naves Citizen Icon">
+                    <a>Naves Citizen</a>
                 </div>
-                <audio id="myAudio" autoplay>
-                    <source src="Hammerhead/Hammerhead.mp3" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-            </selection>
-        </nav>
-    </header>
-
-    <main>
-        <section class="nave">
-            <h2>Hammerhead</h2>
-            <p>A Hammerhead é uma corveta pesada de patrulha, fabricada pela Anvil Aerospace, uma das mais renomadas fabricantes de naves militares e de segurança do universo de Star Citizen. Projetada com foco na defesa de frotas e interdição de ameaças em larga escala, a Hammerhead é um ícone entre as forças de segurança corporativas, militares e organizações privadas de grande porte.</p>
-            <div class="galeria">
-                <div class="imagem-principal">
-                    <img id="imagemPrincipal" src="Hammerhead/img1.png" alt="Imagem Principal da Nave">
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
+                    <a style="color:rgb(192, 197, 124);">Hammerhead </a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
                 </div>
-                <div class="mosaico" id="mosaico">
+                <selection id="teste">
+                    <div class="custom-audio-player">
+                        <button id="playPause">▶</button>
+                        <input type="range" id="progress" value="0" min="0" max="100">
+                    </div>
+                    <audio id="myAudio" autoplay>
+                        <source src="Hammerhead/Hammerhead.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </selection>
+            </nav>
+        </header>
+
+        <main>
+            <section class="nave">
+                <h2>Hammerhead</h2>
+                <p>A Hammerhead é uma corveta pesada de patrulha, fabricada pela Anvil Aerospace, uma das mais renomadas fabricantes de naves militares e de segurança do universo de Star Citizen. Projetada com foco na defesa de frotas e interdição de ameaças em larga escala, a Hammerhead é um ícone entre as forças de segurança corporativas, militares e organizações privadas de grande porte.</p>
+                <div class="galeria">
+                    <div class="imagem-principal">
+                        <img id="imagemPrincipal" src="Hammerhead/img1.png" alt="Imagem Principal da Nave">
+                    </div>
+                    <div class="mosaico" id="mosaico">
+                    </div>
                 </div>
-            </div>
 
-            <div class="botoes-troca">
-                <button onclick="trocarImagem(-1)"><</button>
-                <button onclick="trocarImagem(1)">></button>
-            </div>
-
-           <section class="colapsavel">
-                <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
-                <div class="conteudo-colapsavel" id="conteudoColapsavel">
-                    <h3>Especificações gerais:</h3>
-                    <ul>
-                        <li><strong>Tipo:</strong> Corveta de patrulha pesada</li>
-                        <li><strong>Fabricante:</strong> Anvil Aerospace</li>
-                        <li><strong>Comprimento:</strong> Aproximadamente 115 metros</li>
-                        <li><strong>Massa:</strong> 4.260.000kg ou 4.260 Toneladas</li>
-                        <li><strong>Tripulação mínima:</strong> 4 pessoas</li>
-                        <li><strong>Tripulação ideal:</strong> 8 a 12 pessoas</li>
-                        <li><strong>Capacidade de hangar:</strong> Não possui hangar interno para naves, mas possui um elevador onde é possivel a acomodação de um veículo ou 40 SCU</li>
-                        <li><strong>Armamento principal:</strong> 6 torres tripuladas com canhões balísticos e de energia</li>
-                        <li><strong>Armamento secundário:</strong> Mísseis de médio alcance e sistemas de defesa automática</li>
-                    </ul>
-
-                    <h3>Design e estrutura:</h3>
-                    <p>A Hammerhead é famosa pela sua capacidade de oferecer uma bolha defensiva em torno de frotas ou áreas específicas, graças às suas seis torres tripuladas. Cada uma delas conta com canhões de médio a grande porte, controladas por operadores humanos, garantindo uma resposta rápida e eficaz a ameaças múltiplas, especialmente enxames de caças inimigos.</p>
-
-                    <p>Além disso, a nave é equipada com sistemas de mísseis de médio alcance, que podem ser empregados tanto na defesa quanto em ataques cirúrgicos contra naves de maior porte.</p>
-
-                    <h3>Armamento e Defesa:</h3>
-                    <p>O destaque absoluto da Idris-M é o seu canhão frontal de calibre capital, projetado para perfurar blindagens pesadas e incapacitar alvos de grande porte, como outras fragatas ou naves capitais. Complementando a arma principal, a nave conta com múltiplas torres automáticas e manuais espalhadas pela fuselagem, assegurando cobertura defensiva em 360 graus, essencial em batalhas espaciais onde ataques podem vir de qualquer direção.</p>
-                    <p>Além disso, a nave possui sistemas internos de mísseis de médio alcance, capazes de realizar interceptações ou ataques coordenados com escoltas.</p>
-                    <ul>
-                        <li>Blindagem reforçada de cerâmica metálica.</li>
-                        <li>Geradores de escudos multicamada.</li>
-                        <li>Sistemas automáticos de contramedidas eletrônicas (ECM) para evasão de mísseis.</li>
-                    </ul>
-                    <p>Essa combinação faz da Hammerhead uma das plataformas mais efetivas contra caças e bombardeiros leves, sendo especialmente temida em emboscadas e bloqueios.</p>
-                    
-                    <h3>Capacidade Operacional:</h3>
-                    <p>A Hammerhead não possui hangar próprio, sendo mais adequada para operar como escolta de naves capitais, transportes ou comboios. Sua função é clara: manter o perímetro seguro, neutralizar ameaças rápidas e proporcionar tempo e espaço para que naves mais vulneráveis completem suas missões.</p>
-                    <p>Pode operar de forma autônoma por períodos prolongados, com suporte de vida, armazenamento e alojamentos suficientes para longas patrulhas interestelares.</p>
-
-                    <h3>Função tática:</h3>
-                    <p>Projetada para missões de patrulha, bloqueio, interceptação e escolta, a Hammerhead é ideal para:</p>
-                    <ul>
-                        <li>Proteção de comboios.</li>
-                        <li>Interdição de zonas de tráfego espacial.</li>
-                        <li>Defesa de postos avançados.</li>
-                        <li>Respostas rápidas a sinais de emergência ou invasões.</li>
-                    </ul>
-                    <p>Seu poder de fogo superior e capacidade de manter múltiplos alvos sob pressão simultaneamente fazem dela uma peça indispensável em grupos de ataque ou em operações de policiamento espacial.</p>
-
-                    <h3>Curiosidades:</h3>
-                    <p>A Hammerhead é amplamente utilizada pelas forças de segurança do United Empire of Earth (UEE), além de corporações privadas que atuam em áreas de risco elevado.</p>
-                    <p>Seu nome é uma referência à icônica "cabeça de martelo" de sua estrutura, lembrando o formato de tubarões-martelo terrestres, simbolizando sua força e agressividade.</p>
-                    <p>Apesar de não ser uma nave capital, sua capacidade de defesa a coloca acima de muitas fragatas leves.</p>
-                    <p>Muitas organizações privadas investem na Hammerhead como forma de dissuasão, patrulha de fronteiras ou aplicação de força rápida.</p>
+                <div class="botoes-troca">
+                    <button onclick="trocarImagem(-1)"><</button>
+                    <button onclick="trocarImagem(1)">></button>
                 </div>
+
+            <section class="colapsavel">
+                    <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
+                    <div class="conteudo-colapsavel" id="conteudoColapsavel">
+                        <h3>Especificações gerais:</h3>
+                        <ul>
+                            <li><strong>Tipo:</strong> Corveta de patrulha pesada</li>
+                            <li><strong>Fabricante:</strong> Anvil Aerospace</li>
+                            <li><strong>Comprimento:</strong> Aproximadamente 115 metros</li>
+                            <li><strong>Massa:</strong> 4.260.000kg ou 4.260 Toneladas</li>
+                            <li><strong>Tripulação mínima:</strong> 4 pessoas</li>
+                            <li><strong>Tripulação ideal:</strong> 8 a 12 pessoas</li>
+                            <li><strong>Capacidade de hangar:</strong> Não possui hangar interno para naves, mas possui um elevador onde é possivel a acomodação de um veículo ou 40 SCU</li>
+                            <li><strong>Armamento principal:</strong> 6 torres tripuladas com canhões balísticos e de energia</li>
+                            <li><strong>Armamento secundário:</strong> Mísseis de médio alcance e sistemas de defesa automática</li>
+                        </ul>
+
+                        <h3>Design e estrutura:</h3>
+                        <p>A Hammerhead é famosa pela sua capacidade de oferecer uma bolha defensiva em torno de frotas ou áreas específicas, graças às suas seis torres tripuladas. Cada uma delas conta com canhões de médio a grande porte, controladas por operadores humanos, garantindo uma resposta rápida e eficaz a ameaças múltiplas, especialmente enxames de caças inimigos.</p>
+
+                        <p>Além disso, a nave é equipada com sistemas de mísseis de médio alcance, que podem ser empregados tanto na defesa quanto em ataques cirúrgicos contra naves de maior porte.</p>
+
+                        <h3>Armamento e Defesa:</h3>
+                        <p>O destaque absoluto da Idris-M é o seu canhão frontal de calibre capital, projetado para perfurar blindagens pesadas e incapacitar alvos de grande porte, como outras fragatas ou naves capitais. Complementando a arma principal, a nave conta com múltiplas torres automáticas e manuais espalhadas pela fuselagem, assegurando cobertura defensiva em 360 graus, essencial em batalhas espaciais onde ataques podem vir de qualquer direção.</p>
+                        <p>Além disso, a nave possui sistemas internos de mísseis de médio alcance, capazes de realizar interceptações ou ataques coordenados com escoltas.</p>
+                        <ul>
+                            <li>Blindagem reforçada de cerâmica metálica.</li>
+                            <li>Geradores de escudos multicamada.</li>
+                            <li>Sistemas automáticos de contramedidas eletrônicas (ECM) para evasão de mísseis.</li>
+                        </ul>
+                        <p>Essa combinação faz da Hammerhead uma das plataformas mais efetivas contra caças e bombardeiros leves, sendo especialmente temida em emboscadas e bloqueios.</p>
+                        
+                        <h3>Capacidade Operacional:</h3>
+                        <p>A Hammerhead não possui hangar próprio, sendo mais adequada para operar como escolta de naves capitais, transportes ou comboios. Sua função é clara: manter o perímetro seguro, neutralizar ameaças rápidas e proporcionar tempo e espaço para que naves mais vulneráveis completem suas missões.</p>
+                        <p>Pode operar de forma autônoma por períodos prolongados, com suporte de vida, armazenamento e alojamentos suficientes para longas patrulhas interestelares.</p>
+
+                        <h3>Função tática:</h3>
+                        <p>Projetada para missões de patrulha, bloqueio, interceptação e escolta, a Hammerhead é ideal para:</p>
+                        <ul>
+                            <li>Proteção de comboios.</li>
+                            <li>Interdição de zonas de tráfego espacial.</li>
+                            <li>Defesa de postos avançados.</li>
+                            <li>Respostas rápidas a sinais de emergência ou invasões.</li>
+                        </ul>
+                        <p>Seu poder de fogo superior e capacidade de manter múltiplos alvos sob pressão simultaneamente fazem dela uma peça indispensável em grupos de ataque ou em operações de policiamento espacial.</p>
+
+                        <h3>Curiosidades:</h3>
+                        <p>A Hammerhead é amplamente utilizada pelas forças de segurança do United Empire of Earth (UEE), além de corporações privadas que atuam em áreas de risco elevado.</p>
+                        <p>Seu nome é uma referência à icônica "cabeça de martelo" de sua estrutura, lembrando o formato de tubarões-martelo terrestres, simbolizando sua força e agressividade.</p>
+                        <p>Apesar de não ser uma nave capital, sua capacidade de defesa a coloca acima de muitas fragatas leves.</p>
+                        <p>Muitas organizações privadas investem na Hammerhead como forma de dissuasão, patrulha de fronteiras ou aplicação de força rápida.</p>
+                    </div>
+                </section>
+                <h3>Resumo:</h3>
+                <p>A Hammerhead é a personificação da superioridade defensiva e ofensiva em combates espaciais de médio porte. Seu poder de fogo distribuído, combinado com uma blindagem resiliente e sistemas de suporte avançados, a tornam indispensável para quem precisa patrulhar ou proteger regiões perigosas. Quer seja parte de uma frota ou operando sozinha, a Hammerhead garante que qualquer ameaça pensará duas vezes antes de se aproximar.</p>
             </section>
-            <h3>Resumo:</h3>
-            <p>A Hammerhead é a personificação da superioridade defensiva e ofensiva em combates espaciais de médio porte. Seu poder de fogo distribuído, combinado com uma blindagem resiliente e sistemas de suporte avançados, a tornam indispensável para quem precisa patrulhar ou proteger regiões perigosas. Quer seja parte de uma frota ou operando sozinha, a Hammerhead garante que qualquer ameaça pensará duas vezes antes de se aproximar.</p>
-        </section>
-    </main>
+        </main>
 
-    <footer>
-        <div>
-            <h3>Apresentação da empresa</h3>
-            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
-        </div>
-        <div>
-            <h3>Onde estamos</h3>
-            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
-            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
-            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
-        </div>
-        <div>
-            <h3>Quem somos</h3>
-            <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
-        </div>
-        <div>
-            <h3>Trabalhe conosco</h3>
-            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
-        </div>
-    </footer>
+        <footer>
+            <div>
+                <h3>Apresentação da empresa</h3>
+                <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+            </div>
+            <div>
+                <h3>Onde estamos</h3>
+                <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+                <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+                <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+            </div>
+            <div>
+                <h3>Quem somos</h3>
+                <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+            </div>
+            <div>
+                <h3>Trabalhe conosco</h3>
+                <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+            </div>
+        </footer>
 
-<script>
-    function toggleColapsar() {
-        const conteudo = document.getElementById("conteudoColapsavel");
-        conteudo.classList.toggle("ativo");
-        const btn = document.querySelector(".btn-colapsar");
-        if (conteudo.classList.contains("ativo")) {
-            btn.textContent = "Esconder Especificações";
-        } else {
-            btn.textContent = "Mostrar Especificações";
-        }
-    }
+        <script>
+            const menuHTML = `
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Idris-M">Idris M</a>
+                    <a style="color:rgb(192, 197, 124);">Hammerhead </a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
+                </div>
+            `;
 
-    const imagens = [
-        "Hammerhead/img1.png",
-        "Hammerhead/img2.png",
-        "Hammerhead/img3.jpg",
-        "Hammerhead/img4.jpg",
-        "Hammerhead/img5.jpg"
-    ];
-    let indice = 0;
-    function atualizarGaleria() {
-        document.getElementById("imagemPrincipal").src = imagens[indice];
-        const mosaico = document.getElementById("mosaico");
-        mosaico.innerHTML = "";
-        for (let i = 1; i < 5; i++) {
-            let imgIndex = (indice + i) % imagens.length;
-            const img = document.createElement("img");
-            img.src = imagens[imgIndex];
-            img.alt = `Imagem ${imgIndex + 1} da Nave`;
-            mosaico.appendChild(img);
-        }
-    }
-    function trocarImagem(direcao) {
-        indice = (indice + direcao + imagens.length) % imagens.length;
-        atualizarGaleria();
-    }
-    atualizarGaleria();
-    
-    // Troca automática a cada 3 segundos
-    setInterval(() => {
-        trocarImagem(1);
-    }, 3000);
+            function updateMenu() {
+                const navbar = document.querySelector('.navbar');
+                const existingMenu = document.getElementById('navMenu');
 
-    // Esconde o menu ao rolar
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        const currentScrollPos = window.pageYOffset;
-        const header = document.getElementById("header");
-        if (prevScrollpos > currentScrollPos) {
-            header.style.top = "0";
-        } else {
-            header.style.top = "-80px";
-        }
-        prevScrollpos = currentScrollPos;
-    }
-    const audio = document.getElementById('myAudio');
-        const playPauseBtn = document.getElementById('playPause');
-        const progress = document.getElementById('progress');
-        audio.volume = 0.1;
-
-        // Atualiza o estado visual do botão
-        function updateButton() {
-            playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
-        }
-
-        // Evento de clique para play/pause
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
+                if (window.innerWidth < 910) {
+                    if (existingMenu) {
+                        existingMenu.remove();
+                    }
+                } else {
+                    if (!existingMenu) {
+                        // Insere o menu antes do <selection> (áudio)
+                        const audioSection = document.getElementById('teste');
+                        if (audioSection) {
+                            audioSection.insertAdjacentHTML('beforebegin', menuHTML);
+                        }
+                    }
+                }
             }
-        });
 
-        // Eventos do áudio para atualizar o botão automaticamente
-        audio.addEventListener('play', updateButton);
-        audio.addEventListener('pause', updateButton);
+            window.addEventListener('load', updateMenu);
+            window.addEventListener('resize', updateMenu);
 
-        // Atualiza a barra de progresso
-        audio.addEventListener('timeupdate', () => {
-            progress.value = (audio.currentTime / audio.duration) * 100;
-        });
+            function removeMenuIfNeeded() {
+                const menu = document.getElementById('navMenu');
+                if (window.innerWidth < 910 && menu) {
+                    menu.remove();
+                }
+            }
 
-        // Avançar/retroceder pela barra
-        progress.addEventListener('input', () => {
-            audio.currentTime = (progress.value / 100) * audio.duration;
-        });
+            // Verifica ao carregar a página
+            window.addEventListener('load', removeMenuIfNeeded);
 
-        // Garante que o botão reflita o estado inicial ao carregar
-        window.addEventListener('DOMContentLoaded', () => {
-            updateButton();
-        });
-</script>
+            // Verifica ao redimensionar
+            window.addEventListener('resize', removeMenuIfNeeded);
 
-</body>
+            function toggleColapsar() {
+                const conteudo = document.getElementById("conteudoColapsavel");
+                conteudo.classList.toggle("ativo");
+                const btn = document.querySelector(".btn-colapsar");
+                if (conteudo.classList.contains("ativo")) {
+                    btn.textContent = "Esconder Especificações";
+                } else {
+                    btn.textContent = "Mostrar Especificações";
+                }
+            }
+
+            const imagens = [
+                "Hammerhead/img1.png",
+                "Hammerhead/img2.png",
+                "Hammerhead/img3.jpg",
+                "Hammerhead/img4.jpg",
+                "Hammerhead/img5.jpg"
+            ];
+            let indice = 0;
+            function atualizarGaleria() {
+                document.getElementById("imagemPrincipal").src = imagens[indice];
+                const mosaico = document.getElementById("mosaico");
+                mosaico.innerHTML = "";
+                for (let i = 1; i < 5; i++) {
+                    let imgIndex = (indice + i) % imagens.length;
+                    const img = document.createElement("img");
+                    img.src = imagens[imgIndex];
+                    img.alt = `Imagem ${imgIndex + 1} da Nave`;
+                    mosaico.appendChild(img);
+                }
+            }
+            function trocarImagem(direcao) {
+                indice = (indice + direcao + imagens.length) % imagens.length;
+                atualizarGaleria();
+            }
+            atualizarGaleria();
+            
+            // Troca automática a cada 3 segundos
+            setInterval(() => {
+                trocarImagem(1);
+            }, 3000);
+
+            // Esconde o menu ao rolar
+            let prevScrollpos = window.pageYOffset;
+
+            window.onscroll = function () {
+                const currentScrollPos = window.pageYOffset;
+                const header = document.getElementById("header");
+                const backBtn = document.getElementById("backBtn");
+
+                if (prevScrollpos > currentScrollPos) {
+                    // Mostra o header e o botão
+                    header.style.top = "0";
+                    if (backBtn) backBtn.style.top = "80px";
+                } else {
+                    // Esconde o header e o botão
+                    header.style.top = "-80px";
+                    if (backBtn) backBtn.style.top = "20px";
+                }
+
+                prevScrollpos = currentScrollPos;
+            }
+
+            const audio = document.getElementById('myAudio');
+            const playPauseBtn = document.getElementById('playPause');
+            const progress = document.getElementById('progress');
+            audio.volume = 0.1;
+
+            // Atualiza o estado visual do botão
+            function updateButton() {
+                playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
+            }
+
+            // Evento de clique para play/pause
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+
+            // Eventos do áudio para atualizar o botão automaticamente
+            audio.addEventListener('play', updateButton);
+            audio.addEventListener('pause', updateButton);
+
+            // Atualiza a barra de progresso
+            audio.addEventListener('timeupdate', () => {
+                progress.value = (audio.currentTime / audio.duration) * 100;
+            });
+
+            // Avançar/retroceder pela barra
+            progress.addEventListener('input', () => {
+                audio.currentTime = (progress.value / 100) * audio.duration;
+            });
+
+            // Garante que o botão reflita o estado inicial ao carregar
+            window.addEventListener('DOMContentLoaded', () => {
+                updateButton();
+            });
+        </script>
+
+    </body>
 </html>

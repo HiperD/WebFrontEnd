@@ -1,234 +1,274 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>NavesCitizen - Idris M</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="navescitizen.png">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>NavesCitizen - Idris M</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="navescitizen.png">
+    </head>
+    
+    <body>
 
-<script>
-function toggleColapsar() {
-    const conteudo = document.getElementById("conteudoColapsavel");
-    conteudo.classList.toggle("ativo");
-    const btn = document.querySelector(".btn-colapsar");
-    if (conteudo.classList.contains("ativo")) {
-        btn.textContent = "Esconder Especificações";
-    } else {
-        btn.textContent = "Mostrar Especificações";
-    }
-}
-</script>
-
-<body>
-
-    <header id="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="navescitizen.png" alt="Naves Citizen Icon">
-                <a>Naves Citizen</a>
-            </div>
-            <div class="menu">
-                <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
-                <a style="color:rgb(192, 197, 124);">Idris M</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
-                <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
-            </div>
-            <selection id="teste">
-                <div class="custom-audio-player">
-                    <button id="playPause">▶</button>
-                    <input type="range" id="progress" value="0" min="0" max="100">
+        <header id="header">
+            <nav class="navbar">
+                <button id="backBtn" onclick="history.back()">Voltar</button>
+                <div class="logo">
+                    <img src="navescitizen.png" alt="Naves Citizen Icon">
+                    <a>Naves Citizen</a>
                 </div>
-                <audio id="myAudio" autoplay>
-                    <source src="Idris_M/Idris_M.mp3" type="audio/mpeg">
-                    Seu navegador não suporta o elemento de áudio.
-                </audio>
-            </selection>
-        </nav>
-    </header>
-
-    <main>
-        <section class="nave">
-            <h2>Idris M</h2>
-            <p>A Idris-M é uma fragata pesada de uso militar, projetada e construída pela renomada fabricante Aegis Dynamics, famosa por seu compromisso com a engenharia robusta e capacidades bélicas avançadas. Esta nave é a versão militar da série Idris, diferenciando-se principalmente da versão civil, Idris-P, pela inclusão de armamento e sistemas de combate de grau militar, além de blindagem reforçada.</p>
-            <div class="galeria">
-                <div class="imagem-principal">
-                    <img id="imagemPrincipal" src="Idris_M/img1.png" alt="Imagem Principal da Nave">
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a style="color:rgb(192, 197, 124);">Idris M</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
                 </div>
-                <div class="mosaico" id="mosaico">
+                <selection id="teste">
+                    <div class="custom-audio-player">
+                        <button id="playPause">▶</button>
+                        <input type="range" id="progress" value="0" min="0" max="100">
+                    </div>
+                    <audio id="myAudio" autoplay>
+                        <source src="Idris_M/Idris_M.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </selection>
+            </nav>
+        </header>
+
+        <main>
+            <section class="nave">
+                <h2>Idris M</h2>
+                <p>A Idris-M é uma fragata pesada de uso militar, projetada e construída pela renomada fabricante Aegis Dynamics, famosa por seu compromisso com a engenharia robusta e capacidades bélicas avançadas. Esta nave é a versão militar da série Idris, diferenciando-se principalmente da versão civil, Idris-P, pela inclusão de armamento e sistemas de combate de grau militar, além de blindagem reforçada.</p>
+                <div class="galeria">
+                    <div class="imagem-principal">
+                        <img id="imagemPrincipal" src="Idris_M/img1.png" alt="Imagem Principal da Nave">
+                    </div>
+                    <div class="mosaico" id="mosaico">
+                    </div>
                 </div>
-            </div>
 
-            <div class="botoes-troca">
-                <button onclick="trocarImagem(-1)"><</button>
-                <button onclick="trocarImagem(1)">></button>
-            </div>
-
-           <section class="colapsavel">
-                <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
-                <div class="conteudo-colapsavel" id="conteudoColapsavel">
-                    <h3>Especificações gerais:</h3>
-                    <ul>
-                        <li><strong>Tipo:</strong> Fragata pesada</li>
-                        <li><strong>Fabricante:</strong> Aegis Dynamics</li>
-                        <li><strong>Comprimento:</strong> Aproximadamente 240 metros</li>
-                        <li><strong>Massa:</strong> 37.854.373kg ou 37.854 Toneladas</li>
-                        <li><strong>Tripulação mínima:</strong> 8</li>
-                        <li><strong>Tripulação ideal:</strong> 28 a 40</li>
-                        <li><strong>Capacidade de hangar:</strong> 1 a 2 caças pequenos ou veículos espaciais leves, ou 1326 SCU</li>
-                        <li><strong>Armamento principal:</strong> Canhão de calibre capital, tipo Behring M10-Flex, montado na proa</li>
-                        <li><strong>Armamento secundário:</strong> Várias torres automáticas e tripuladas, incluindo canhões de médio e pequeno porte para defesa anticaças e antipessoal</li>
-                    </ul>
-
-                    <h3>Design e estrutura:</h3>
-                    <p>O design da Idris-M prioriza o equilíbrio entre poder de fogo, mobilidade e capacidade de transporte. Sua estrutura modular permite adaptações em diversas áreas, desde alojamentos adicionais até melhorias nos sistemas de escudo. O hangar localizado na parte inferior da nave possibilita o lançamento rápido de caças, tornando a Idris uma verdadeira plataforma móvel de ataque e defesa.</p>
-                    <p>A blindagem reforçada em ligas metálicas de última geração, associada a um sistema de escudos defletores multicamadas, proporciona resistência contra ataques de diferentes intensidades, desde rajadas de canhões laser até impactos de mísseis de grande porte.</p>
-
-                    <h3>Armamento e Defesa:</h3>
-                    <p>O destaque absoluto da Idris-M é o seu canhão frontal de calibre capital, projetado para perfurar blindagens pesadas e incapacitar alvos de grande porte, como outras fragatas ou naves capitais. Complementando a arma principal, a nave conta com múltiplas torres automáticas e manuais espalhadas pela fuselagem, assegurando cobertura defensiva em 360 graus, essencial em batalhas espaciais onde ataques podem vir de qualquer direção.</p>
-
-                    <p>Além disso, a nave possui sistemas internos de mísseis de médio alcance, capazes de realizar interceptações ou ataques coordenados com escoltas.</p>
-
-                    <h3>Capacidade de transporte:</h3>
-                    <p>A Idris-M pode acomodar até dois caças leves ou veículos utilitários, além de dispor de espaço para transporte de tropas, materiais logísticos ou equipamentos de missão. Esse aspecto transforma a nave não apenas em uma plataforma de combate, mas também em uma base avançada para operações de patrulha, exploração e apoio em território hostil.</p>
-
-                    <p>Internamente, a nave conta com alojamentos para a tripulação, sala de comando, enfermaria, área de recreação e suporte técnico para manutenção de naves e sistemas.</p>
-
-                    <h3>Função tática:</h3>
-                    <p>A Idris-M foi projetada com um propósito claro: ser a espinha dorsal de grupos de batalha, atuando como líder de esquadra, plataforma de comando e foco de poder de fogo. Sua presença no campo de batalha é suficiente para mudar a dinâmica de um conflito, intimidando adversários e protegendo aliados.</p>
-
-                    <p>Com sua capacidade de transportar tropas e caças, serve também como veículo essencial em operações de assalto, interceptação e defesa territorial.</p>
-
-                    <h3>Curiosidades:</h3>
-                    <p>Aegis Dynamics comercializa a Idris-P para civis, mas a Idris-M permanece uma nave extremamente rara fora das forças armadas, com registros ocasionais de venda a organizações privadas muito bem conectadas.</p>
-
-                    <p>A produção da Idris-M passou por diversas revisões desde sua concepção, com aprimoramentos constantes no sistema de propulsão e blindagem.</p>
-
-                    <p>Frequentemente apelidada de "The Spearhead" (A Lança), devido ao seu poder ofensivo formidável.</p>
+                <div class="botoes-troca">
+                    <button onclick="trocarImagem(-1)"><</button>
+                    <button onclick="trocarImagem(1)">></button>
                 </div>
+
+            <section class="colapsavel">
+                    <button class="btn-colapsar" onclick="toggleColapsar()">Mostrar Especificações</button>
+                    <div class="conteudo-colapsavel" id="conteudoColapsavel">
+                        <h3>Especificações gerais:</h3>
+                        <ul>
+                            <li><strong>Tipo:</strong> Fragata pesada</li>
+                            <li><strong>Fabricante:</strong> Aegis Dynamics</li>
+                            <li><strong>Comprimento:</strong> Aproximadamente 240 metros</li>
+                            <li><strong>Massa:</strong> 37.854.373kg ou 37.854 Toneladas</li>
+                            <li><strong>Tripulação mínima:</strong> 8</li>
+                            <li><strong>Tripulação ideal:</strong> 28 a 40</li>
+                            <li><strong>Capacidade de hangar:</strong> 1 a 2 caças pequenos ou veículos espaciais leves, ou 1326 SCU</li>
+                            <li><strong>Armamento principal:</strong> Canhão de calibre capital, tipo Behring M10-Flex, montado na proa</li>
+                            <li><strong>Armamento secundário:</strong> Várias torres automáticas e tripuladas, incluindo canhões de médio e pequeno porte para defesa anticaças e antipessoal</li>
+                        </ul>
+
+                        <h3>Design e estrutura:</h3>
+                        <p>O design da Idris-M prioriza o equilíbrio entre poder de fogo, mobilidade e capacidade de transporte. Sua estrutura modular permite adaptações em diversas áreas, desde alojamentos adicionais até melhorias nos sistemas de escudo. O hangar localizado na parte inferior da nave possibilita o lançamento rápido de caças, tornando a Idris uma verdadeira plataforma móvel de ataque e defesa.</p>
+                        <p>A blindagem reforçada em ligas metálicas de última geração, associada a um sistema de escudos defletores multicamadas, proporciona resistência contra ataques de diferentes intensidades, desde rajadas de canhões laser até impactos de mísseis de grande porte.</p>
+
+                        <h3>Armamento e Defesa:</h3>
+                        <p>O destaque absoluto da Idris-M é o seu canhão frontal de calibre capital, projetado para perfurar blindagens pesadas e incapacitar alvos de grande porte, como outras fragatas ou naves capitais. Complementando a arma principal, a nave conta com múltiplas torres automáticas e manuais espalhadas pela fuselagem, assegurando cobertura defensiva em 360 graus, essencial em batalhas espaciais onde ataques podem vir de qualquer direção.</p>
+
+                        <p>Além disso, a nave possui sistemas internos de mísseis de médio alcance, capazes de realizar interceptações ou ataques coordenados com escoltas.</p>
+
+                        <h3>Capacidade de transporte:</h3>
+                        <p>A Idris-M pode acomodar até dois caças leves ou veículos utilitários, além de dispor de espaço para transporte de tropas, materiais logísticos ou equipamentos de missão. Esse aspecto transforma a nave não apenas em uma plataforma de combate, mas também em uma base avançada para operações de patrulha, exploração e apoio em território hostil.</p>
+
+                        <p>Internamente, a nave conta com alojamentos para a tripulação, sala de comando, enfermaria, área de recreação e suporte técnico para manutenção de naves e sistemas.</p>
+
+                        <h3>Função tática:</h3>
+                        <p>A Idris-M foi projetada com um propósito claro: ser a espinha dorsal de grupos de batalha, atuando como líder de esquadra, plataforma de comando e foco de poder de fogo. Sua presença no campo de batalha é suficiente para mudar a dinâmica de um conflito, intimidando adversários e protegendo aliados.</p>
+
+                        <p>Com sua capacidade de transportar tropas e caças, serve também como veículo essencial em operações de assalto, interceptação e defesa territorial.</p>
+
+                        <h3>Curiosidades:</h3>
+                        <p>Aegis Dynamics comercializa a Idris-P para civis, mas a Idris-M permanece uma nave extremamente rara fora das forças armadas, com registros ocasionais de venda a organizações privadas muito bem conectadas.</p>
+
+                        <p>A produção da Idris-M passou por diversas revisões desde sua concepção, com aprimoramentos constantes no sistema de propulsão e blindagem.</p>
+
+                        <p>Frequentemente apelidada de "The Spearhead" (A Lança), devido ao seu poder ofensivo formidável.</p>
+                    </div>
+                </section>
+                <h3>Resumo:</h3>
+                <p>A Idris-M representa o ápice da engenharia militar contemporânea no universo de Star Citizen, combinando poder de fogo devastador, versatilidade operacional e capacidade estratégica incomparável. Seja como comandante de frotas ou defensora de sistemas, a Idris-M é uma escolha incomparável para quem busca dominar os céus e o espaço profundo.</p>
             </section>
-            <h3>Resumo:</h3>
-            <p>A Idris-M representa o ápice da engenharia militar contemporânea no universo de Star Citizen, combinando poder de fogo devastador, versatilidade operacional e capacidade estratégica incomparável. Seja como comandante de frotas ou defensora de sistemas, a Idris-M é uma escolha incomparável para quem busca dominar os céus e o espaço profundo.</p>
-        </section>
-    </main>
+        </main>
 
-    <footer>
-        <div>
-            <h3>Apresentação da empresa</h3>
-            <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
-        </div>
-        <div>
-            <h3>Onde estamos</h3>
-            <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
-            <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
-            <p>Redes sociais: Spectrum - @navescitizen_area18</p>
-        </div>
-        <div>
-            <h3>Quem somos</h3>
-            <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
-        </div>
-        <div>
-            <h3>Trabalhe conosco</h3>
-            <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
-        </div>
-    </footer>
+        <footer>
+            <div>
+                <h3>Apresentação da empresa</h3>
+                <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
+            </div>
+            <div>
+                <h3>Onde estamos</h3>
+                <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
+                <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
+                <p>Redes sociais: Spectrum - @navescitizen_area18</p>
+            </div>
+            <div>
+                <h3>Quem somos</h3>
+                <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
+            </div>
+            <div>
+                <h3>Trabalhe conosco</h3>
+                <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
+            </div>
+        </footer>
 
-<script>
-    function toggleColapsar() {
-        const conteudo = document.getElementById("conteudoColapsavel");
-        conteudo.classList.toggle("ativo");
-        const btn = document.querySelector(".btn-colapsar");
-        if (conteudo.classList.contains("ativo")) {
-            btn.textContent = "Esconder Especificações";
-        } else {
-            btn.textContent = "Mostrar Especificações";
-        }
-    }  
-    
-    const imagens = [
-        "Idris_M/img1.png",
-        "Idris_M/img2.jpg",
-        "Idris_M/img3.png",
-        "Idris_M/img4.png",
-        "Idris_M/img5.jpg"
-    ];
-    let indice = 0;
-    function atualizarGaleria() {
-        document.getElementById("imagemPrincipal").src = imagens[indice];
-        const mosaico = document.getElementById("mosaico");
-        mosaico.innerHTML = "";
-        for (let i = 1; i < 5; i++) {
-            let imgIndex = (indice + i) % imagens.length;
-            const img = document.createElement("img");
-            img.src = imagens[imgIndex];
-            img.alt = `Imagem ${imgIndex + 1} da Nave`;
-            mosaico.appendChild(img);
-        }
-    }
-    function trocarImagem(direcao) {
-        indice = (indice + direcao + imagens.length) % imagens.length;
-        atualizarGaleria();
-    }
-    atualizarGaleria();
-    
-    // Troca automática a cada 3 segundos
-    setInterval(() => {
-        trocarImagem(1);
-    }, 3000);
+        <script>
+            const menuHTML = `
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/">Início</a>
+                    <a style="color:rgb(192, 197, 124);">Idris M</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hammerhead">Hammerhead</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/890-Jump">890 Jump</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Reclaimer">Reclaimer</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Hull-C">Hull C</a>
+                </div>
+            `;
 
-    // Esconde o menu ao rolar
-    let prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        const currentScrollPos = window.pageYOffset;
-        const header = document.getElementById("header");
-        if (prevScrollpos > currentScrollPos) {
-            header.style.top = "0";
-        } else {
-            header.style.top = "-80px";
-        }
-        prevScrollpos = currentScrollPos;
-    }
-    const audio = document.getElementById('myAudio');
-        const playPauseBtn = document.getElementById('playPause');
-        const progress = document.getElementById('progress');
-        audio.volume = 0.1;
+            function updateMenu() {
+                const navbar = document.querySelector('.navbar');
+                const existingMenu = document.getElementById('navMenu');
 
-        // Atualiza o estado visual do botão
-        function updateButton() {
-            playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
-        }
-
-        // Evento de clique para play/pause
-        playPauseBtn.addEventListener('click', () => {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
+                if (window.innerWidth < 910) {
+                    if (existingMenu) {
+                        existingMenu.remove();
+                    }
+                } else {
+                    if (!existingMenu) {
+                        // Insere o menu antes do <selection> (áudio)
+                        const audioSection = document.getElementById('teste');
+                        if (audioSection) {
+                            audioSection.insertAdjacentHTML('beforebegin', menuHTML);
+                        }
+                    }
+                }
             }
-        });
 
-        // Eventos do áudio para atualizar o botão automaticamente
-        audio.addEventListener('play', updateButton);
-        audio.addEventListener('pause', updateButton);
+            window.addEventListener('load', updateMenu);
+            window.addEventListener('resize', updateMenu);
 
-        // Atualiza a barra de progresso
-        audio.addEventListener('timeupdate', () => {
-            progress.value = (audio.currentTime / audio.duration) * 100;
-        });
+            function removeMenuIfNeeded() {
+                const menu = document.getElementById('navMenu');
+                if (window.innerWidth < 910 && menu) {
+                    menu.remove();
+                }
+            }
 
-        // Avançar/retroceder pela barra
-        progress.addEventListener('input', () => {
-            audio.currentTime = (progress.value / 100) * audio.duration;
-        });
+            // Verifica ao carregar a página
+            window.addEventListener('load', removeMenuIfNeeded);
 
-        // Garante que o botão reflita o estado inicial ao carregar
-        window.addEventListener('DOMContentLoaded', () => {
-            updateButton();
-        });
-</script>
+            // Verifica ao redimensionar
+            window.addEventListener('resize', removeMenuIfNeeded);
 
-</body>
+            function toggleColapsar() {
+                const conteudo = document.getElementById("conteudoColapsavel");
+                conteudo.classList.toggle("ativo");
+                const btn = document.querySelector(".btn-colapsar");
+                if (conteudo.classList.contains("ativo")) {
+                    btn.textContent = "Esconder Especificações";
+                } else {
+                    btn.textContent = "Mostrar Especificações";
+                }
+            }  
+            
+            const imagens = [
+                "Idris_M/img1.png",
+                "Idris_M/img2.jpg",
+                "Idris_M/img3.png",
+                "Idris_M/img4.png",
+                "Idris_M/img5.jpg"
+            ];
+            let indice = 0;
+            function atualizarGaleria() {
+                document.getElementById("imagemPrincipal").src = imagens[indice];
+                const mosaico = document.getElementById("mosaico");
+                mosaico.innerHTML = "";
+                for (let i = 1; i < 5; i++) {
+                    let imgIndex = (indice + i) % imagens.length;
+                    const img = document.createElement("img");
+                    img.src = imagens[imgIndex];
+                    img.alt = `Imagem ${imgIndex + 1} da Nave`;
+                    mosaico.appendChild(img);
+                }
+            }
+            function trocarImagem(direcao) {
+                indice = (indice + direcao + imagens.length) % imagens.length;
+                atualizarGaleria();
+            }
+            atualizarGaleria();
+            
+            // Troca automática a cada 3 segundos
+            setInterval(() => {
+                trocarImagem(1);
+            }, 3000);
+
+            // Esconde o menu ao rolar
+            let prevScrollpos = window.pageYOffset;
+
+            window.onscroll = function () {
+                const currentScrollPos = window.pageYOffset;
+                const header = document.getElementById("header");
+                const backBtn = document.getElementById("backBtn");
+
+                if (prevScrollpos > currentScrollPos) {
+                    // Mostra o header e o botão
+                    header.style.top = "0";
+                    if (backBtn) backBtn.style.top = "80px";
+                } else {
+                    // Esconde o header e o botão
+                    header.style.top = "-80px";
+                    if (backBtn) backBtn.style.top = "20px";
+                }
+
+                prevScrollpos = currentScrollPos;
+            }
+            const audio = document.getElementById('myAudio');
+            const playPauseBtn = document.getElementById('playPause');
+            const progress = document.getElementById('progress');
+            audio.volume = 0.1;
+
+            // Atualiza o estado visual do botão
+            function updateButton() {
+                playPauseBtn.textContent = audio.paused ? '▶' : '⏹';
+            }
+
+            // Evento de clique para play/pause
+            playPauseBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                } else {
+                    audio.pause();
+                }
+            });
+
+            // Eventos do áudio para atualizar o botão automaticamente
+            audio.addEventListener('play', updateButton);
+            audio.addEventListener('pause', updateButton);
+
+            // Atualiza a barra de progresso
+            audio.addEventListener('timeupdate', () => {
+                progress.value = (audio.currentTime / audio.duration) * 100;
+            });
+
+            // Avançar/retroceder pela barra
+            progress.addEventListener('input', () => {
+                audio.currentTime = (progress.value / 100) * audio.duration;
+            });
+
+            // Garante que o botão reflita o estado inicial ao carregar
+            window.addEventListener('DOMContentLoaded', () => {
+                updateButton();
+            });
+        </script>
+    </body>
 </html>
