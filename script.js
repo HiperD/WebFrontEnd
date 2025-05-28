@@ -170,6 +170,17 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    function toggleColapsar() {
+        const conteudo = document.getElementById("conteudoColapsavel");
+        conteudo.classList.toggle("ativo");
+        const btn = document.querySelector(".btn-colapsar");
+        if (conteudo.classList.contains("ativo")) {
+            btn.textContent = "Esconder Especificações";
+        } else {
+            btn.textContent = "Mostrar Especificações";
+        }
+    }   
+
     // Eventos do áudio para atualizar o botão automaticamente
     audio.addEventListener('play', updateButton);
     audio.addEventListener('pause', updateButton);
