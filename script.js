@@ -79,17 +79,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Verifica ao redimensionar
     window.addEventListener('resize', removeMenuIfNeeded);
-
-    function toggleColapsar() {
-        const conteudo = document.getElementById("conteudoColapsavel");
-        conteudo.classList.toggle("ativo");
-        const btn = document.querySelector(".btn-colapsar");
-        if (conteudo.classList.contains("ativo")) {
-            btn.textContent = "Esconder Especificações";
-        } else {
-            btn.textContent = "Mostrar Especificações";
-        }
-    }  
+    updateMenu();
+    removeMenuIfNeeded();
+    atualizarGaleria();
+    updateButton();
     
     const pathParts = window.location.pathname.split('/');
     const folder = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
