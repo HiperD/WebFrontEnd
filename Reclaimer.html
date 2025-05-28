@@ -118,26 +118,13 @@
             </section>
         </main>
 
-        <footer>
-            <div>
-                <h3>Apresentação da empresa</h3>
-                <p>Somos especializados na venda das melhores naves de Stanton, estamos localizados na maior cidade de Arccorp.</p>
-            </div>
-            <div>
-                <h3>Onde estamos</h3>
-                <p>Endereço: Sala 13 Bloco B - Espaçoporto B31, Área18 - ArcCorp, Stanton</p>
-                <p>Email: contato@navescitizen.arccorp.stanton.uee</p>
-                <p>Redes sociais: Spectrum - @navescitizen_area18</p>
-            </div>
-            <div>
-                <h3>Quem somos</h3>
-                <p>Somos uma empresa fundada em 2729 por Leonardo S. e Cruz, e hoje estamos em mais de 35 sistemas, incluindo os mais populares Sol, Terra, Stanton ,Pyro, Tayac entre outros</p>
-            </div>
-            <div>
-                <h3>Trabalhe conosco</h3>
-                <p>Procuramos apaixonados por exploração espacial! Envie seu pager para: rh@navescitizen.arccorp.stanton.uee</p>
-            </div>
-        </footer>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                });
+        </script>
 
         <script src="script.js"></script>
 
