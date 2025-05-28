@@ -10,35 +10,62 @@ window.addEventListener('DOMContentLoaded', function() {
         </div>
     `;
 
+    function gerarMenu(destaque) {
+        const itens = [
+            { nome: 'Início', href: 'https://hiperd.github.io/WebFrontEnd/' },
+            { nome: 'Idris M', href: 'https://hiperd.github.io/WebFrontEnd/Idris-M' },
+            { nome: 'Hammerhead', href: 'https://hiperd.github.io/WebFrontEnd/Hammerhead' },
+            { nome: '890 Jump', href: 'https://hiperd.github.io/WebFrontEnd/890-Jump' },
+            { nome: 'Reclaimer', href: 'https://hiperd.github.io/WebFrontEnd/Reclaimer' },
+            { nome: 'Hull C', href: 'https://hiperd.github.io/WebFrontEnd/Hull-C' },
+        ];
+
+        return `
+            <div class="menu" id="navMenu">
+                ${itens.map(item => `
+                    <a href="${item.href}" ${item.nome === destaque ? 'style="color:rgb(192, 197, 124); font-weight:bold;"' : ''}>
+                        ${item.nome}
+                    </a>
+                `).join('')}
+            </div>
+        `;
+    }
+
+    function getDestaquePagina() {
+        const path = window.location.pathname;
+
+        if (path.includes('Idris-M')) return 'Idris M';
+        if (path.includes('Hammerhead')) return 'Hammerhead';
+        if (path.includes('890-Jump')) return '890 Jump';
+        if (path.includes('Reclaimer')) return 'Reclaimer';
+        if (path.includes('Hull-C')) return 'Hull C';
+        return 'Início';
+    }
+
     function updateMenu() {
         const navbar = document.querySelector('.navbar');
         const existingMenu = document.getElementById('navMenu');
         const backBtn = document.getElementById('backBtn');
+        const audioSection = document.getElementById('teste');
 
         if (window.innerWidth < 1040) {
             if (existingMenu) {
                 existingMenu.remove();
             }
+            if (backBtn) backBtn.style.display = "block";
         } else {
-            if (!existingMenu) {
-                // Insere o menu antes do <selection> (áudio)
-                const audioSection = document.getElementById('teste');
-                if (audioSection) {
-                    audioSection.insertAdjacentHTML('beforebegin', menuHTML);
-                }
+            if (!existingMenu && navbar && audioSection) {
+                const menuHTML = gerarMenu(getDestaquePagina());
+                audioSection.insertAdjacentHTML('beforebegin', menuHTML);
             }
-        }
-        if (backBtn) {
-            if (window.innerWidth <= 1040) {
-                backBtn.style.display = "block";
-            } else {
-                backBtn.style.display = "none";
-            }
+            if (backBtn) backBtn.style.display = "none";
         }
     }
 
-    window.addEventListener('load', updateMenu);
+    // Executa ao carregar a página e ao redimensionar
+    window.addEventListener('DOMContentLoaded', updateMenu);
     window.addEventListener('resize', updateMenu);
+
 
     function removeMenuIfNeeded() {
         const menu = document.getElementById('navMenu');
