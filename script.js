@@ -54,11 +54,11 @@ function removeMenuIfNeeded() {
 const pathParts = window.location.pathname.split('/');
 const folder = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2];
 const imagens = [
-    `${folder}/img1.png`,
-    `${folder}/img2.png`,
-    `${folder}/img3.png`,
-    `${folder}/img4.png`,
-    `${folder}/img5.png`
+    `https://hiperd.github.io/WebFrontEnd/${folder}/img1.png`,
+    `https://hiperd.github.io/WebFrontEnd/${folder}/img2.png`,
+    `https://hiperd.github.io/WebFrontEnd/${folder}/img3.png`,
+    `https://hiperd.github.io/WebFrontEnd/${folder}/img4.png`,
+    `https://hiperd.github.io/WebFrontEnd/${folder}/img5.png`
 ];
 let indice = 0;
 
