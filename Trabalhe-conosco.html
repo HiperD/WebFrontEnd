@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <!-- Meta padrão Open Graph -->
+        <meta property="og:title" content="NavesCitizen.uee">
+        <meta property="og:description" content="Naves Citizen — Comércio Intergaláctico de Confiança">
+        <meta property="og:image" content="https://hiperd.github.io/WebFrontEnd/navescitizen.png">
+        <meta property="og:url" content="https://hiperd.github.io/WebFrontEnd/">
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Card opcional -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="NavesCitizen.uee">
+        <meta name="twitter:description" content="Naves Citizen — Comércio Intergaláctico de Confiança">
+        <meta name="twitter:image" content="https://hiperd.github.io/WebFrontEnd/navescitizen.png">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NavesCitizen.uee</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="navescitizen.png" style="border-radius: 50%;">
+    </head>
+    <body>
+        <!-- Menu de navegação -->
+        <header id="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="https://hiperd.github.io/WebFrontEnd/navescitizen.png" alt="Naves Citizen Icon">
+                    <a>Naves Citizen</a>
+                </div>
+                <div class="menu" id="navMenu">
+                    <a href="https://hiperd.github.io/WebFrontEnd/Quem-Somos">Trabalhe conosco</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Top-Sellers">Naves Destaque</a>
+                </div>
+                <selection id="teste">
+                    <div class="custom-audio-player">
+                        <button id="playPause">▶</button>
+                        <input type="range" id="progress" value="0" min="0" max="100">
+                    </div>
+                    <audio id="myAudio" autoplay>
+                        <source src="https://hiperd.github.io/WebFrontEnd/Atomos.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </selection>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+
+                    <img src="trabalhe-conosco.png" alt="Trabalhe conosco">
+                    <br>
+                    Procuramos apaixonados por exploração espacial! <br>
+                    Envie sua conta Spectrum para: 
+                    <a class="email" href="mailto:rh@navescitizen.arccorp.stanton.uee">
+                        rh@navescitizen.arccorp.stanton.uee
+                    </a>
+
+            </div>
+        </main>
+        
+            
+
+        <div id="footer"></div>
+        <script>
+            fetch('https://hiperd.github.io/WebFrontEnd/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById('footer').innerHTML = data;
+                });
+        </script>
+
+        <script src="scriptPages.js"></script>
+    </body>
+</html>

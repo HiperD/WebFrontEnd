@@ -293,3 +293,76 @@ footer p {
     transform: scale(1.05);
     transition: top 0.3s;
 }
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(87, 57, 221);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.container img{
+    width: 100%;
+    max-height: 400px;
+    max-width: 100%;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+h1 {
+    color: #1c1f26;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: white;
+    line-height: 1.6;
+}
+
+.email {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+  gap: 30px;
+}
+
+.section-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.section img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Classe que inverte a direção do container */
+.section.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .section, .section.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section img {
+    width: 100%;
+    height: auto;
+  }
+}
