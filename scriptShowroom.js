@@ -94,6 +94,7 @@ window.onscroll = function () {
 // --- Inicialização ---
 updateMenu();
 removeMenuIfNeeded();
+updateButton();
 window.addEventListener('resize', () => {
     updateMenu();
     removeMenuIfNeeded();
