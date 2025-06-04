@@ -1,13 +1,20 @@
 // --- Menu Dinâmico ---
 function gerarMenu(destaque) {
+    const itens = [
+        { nome: 'Início', href: 'https://hiperd.github.io/WebFrontEnd/' },
+        { nome: 'Showroom', href: 'https://hiperd.github.io/WebFrontEnd/Showroom' },
+        { nome: 'Idris M', href: 'https://hiperd.github.io/WebFrontEnd/Idris-M' },
+        { nome: 'Hammerhead', href: 'https://hiperd.github.io/WebFrontEnd/Hammerhead' },
+        { nome: '890 Jump', href: 'https://hiperd.github.io/WebFrontEnd/890-Jump' },
+        { nome: 'Reclaimer', href: 'https://hiperd.github.io/WebFrontEnd/Reclaimer' },
+        { nome: 'Hull C', href: 'https://hiperd.github.io/WebFrontEnd/Hull-C' },
+    ];
     return `<div class="menu" id="navMenu">
-                <a href: "https://hiperd.github.io/WebFrontEnd/">Inicio</a>
-                <a href="#nave1">Idris M</a>
-                <a href="#nave2">Hammerhead</a>
-                <a href="#nave3">890 Jump</a>
-                <a href="#nave4">Reclaimer</a>
-                <a href="#nave5">Hull C</a>
-            </div>`;
+        ${itens.map(item => `
+            <a href="${item.href}" ${item.nome === destaque ? 'style="color:rgb(192, 197, 124); font-weight:bold;"' : ''}>
+                ${item.nome}
+            </a>`).join('')}
+    </div>`;
 }
 
 
@@ -18,7 +25,7 @@ function updateMenu() {
     const backBtn = document.getElementById('backBtn');
     const audioSection = document.getElementById('teste');
 
-    if (window.innerWidth < 1050) {
+    if (window.innerWidth < 1260) {
         if (existingMenu) existingMenu.remove();
         if (backBtn) backBtn.style.display = "block";
     } else {
@@ -31,7 +38,7 @@ function updateMenu() {
 
 function removeMenuIfNeeded() {
     const menu = document.getElementById('navMenu');
-    if (window.innerWidth < 1050 && menu) {
+    if (window.innerWidth < 1260 && menu) {
         menu.remove();
     }
 }

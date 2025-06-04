@@ -33,7 +33,7 @@ function updateMenu() {
     const backBtn = document.getElementById('backBtn');
     const audioSection = document.getElementById('teste');
 
-    if (window.innerWidth < 1040) {
+    if (window.innerWidth < 1260) {
         if (existingMenu) existingMenu.remove();
         if (backBtn) backBtn.style.display = "block";
     } else {
@@ -46,7 +46,7 @@ function updateMenu() {
 
 function removeMenuIfNeeded() {
     const menu = document.getElementById('navMenu');
-    if (window.innerWidth < 910 && menu) {
+    if (window.innerWidth < 1260 && menu) {
         menu.remove();
     }
 }
