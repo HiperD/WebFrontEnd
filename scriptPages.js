@@ -1,8 +1,3 @@
-// --- Menu Dinâmico ---
-
-
-
-
 function updateMenu() {
     const navbar = document.querySelector('.navbar');
     const existingMenu = document.getElementById('navMenu');
@@ -69,6 +64,7 @@ window.onscroll = function () {
 // --- Inicialização ---
 updateMenu();
 removeMenuIfNeeded();
+updateButton();
 window.addEventListener('resize', () => {
     updateMenu();
     removeMenuIfNeeded();

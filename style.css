@@ -305,6 +305,22 @@ footer p {
     transition: top 0.3s;
 }
 
+#button {
+    background-color: #002A52; /* azul moderno */
+    color: white;
+    border: none;
+   
+    border-radius: 8px;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: top 0.3s;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    min
+}
+
 #backBtn:hover {
     background-color: #002A52;
     transform: scale(1.05);
@@ -359,9 +375,6 @@ p {
     max-width: 1200px;
 }
 
-.section.reverse {
-    flex-direction: row-reverse;
-}
 
 .section img {
     width: 300px;
@@ -377,16 +390,45 @@ p {
 }
 
 .section-content h2 {
+    text-align: right;
     font-size: 28px;
     margin-bottom: 15px;
     color: #FF6347; /* tom vibrante que combine com o dark */
 }
 
 .section-content p {
+    text-align: justify;
     font-size: 18px;
     line-height: 1.6;
 }
 
+.section-content a {
+    text-align: center;
+}
+
+
+.section-content-right {
+    max-width: 500px;
+    color: #fff;
+}
+
+.section-content-right h2 {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #FF6347; /* tom vibrante que combine com o dark */
+}
+
+.section-content-right p {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.section-content-right a {
+    text-align: center;
+    font-size: 18px;
+}
 
 /* Classe que inverte a direção do container */
 .section.reverse {
@@ -411,5 +453,11 @@ p {
 
     .menu2 a {
         visibility: hidden;
+    }
+    .section-content h2 {
+        text-align: center;
+    }
+    .section-content-right h2 {
+        text-align: center;
     }
 }
