@@ -1,24 +1,11 @@
 function updateMenu() {
-    const navbar = document.querySelector('.navbar');
-    const existingMenu = document.getElementById('navMenu');
     const backBtn = document.getElementById('backBtn');
     const audioSection = document.getElementById('teste');
 
     if (window.innerWidth < 910) {
-        if (existingMenu) menu.style.display = "none";
         if (backBtn) backBtn.style.display = "block";
     } else {
-        if (!existingMenu && navbar && audioSection) {
-            menu.style.display = "block";
-        }
         if (backBtn) backBtn.style.display = "none";
-    }
-}
-
-function removeMenuIfNeeded() {
-    const menu = document.getElementById('menu2');
-    if (window.innerWidth < 910 && menu) {
-        menu.style.display = "block"
     }
 }
 
@@ -67,5 +54,4 @@ removeMenuIfNeeded();
 updateButton();
 window.addEventListener('resize', () => {
     updateMenu();
-    removeMenuIfNeeded();
 });
