@@ -2,6 +2,7 @@
 function gerarMenu(destaque) {
     const itens = [
         { nome: 'Início', href: 'https://hiperd.github.io/WebFrontEnd/' },
+        { nome: 'Showroom', href: 'https://hiperd.github.io/WebFrontEnd/Showroom' },
         { nome: 'Idris M', href: 'https://hiperd.github.io/WebFrontEnd/Idris-M' },
         { nome: 'Hammerhead', href: 'https://hiperd.github.io/WebFrontEnd/Hammerhead' },
         { nome: '890 Jump', href: 'https://hiperd.github.io/WebFrontEnd/890-Jump' },

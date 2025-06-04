@@ -22,82 +22,79 @@
     </head>
     
     <body>
-        <!-- Menu de navegação -->
-        <header id="header">
+        <header>
             <nav class="navbar">
                 <div class="logo">
                     <img src="https://hiperd.github.io/WebFrontEnd/navescitizen.png" alt="Naves Citizen Icon">
-                    <a>Naves Citizen</a>
+                    <a href="#">Naves Citizen</a>
                 </div>
-                <div class="menu" id="navMenu">
+                <div class="menu2">
                     <a href="https://hiperd.github.io/WebFrontEnd/Quem-Somos">Trabalhe conosco</a>
-                    <a href="https://hiperd.github.io/WebFrontEnd/Top-Sellers">Naves de Destaque</a>
+                    <a href="https://hiperd.github.io/WebFrontEnd/Showroom">Showroom</a>
                 </div>
-                <selection id="teste">
+                <div id="teste">
                     <div class="custom-audio-player">
                         <button id="playPause">▶</button>
                         <input type="range" id="progress" value="0" min="0" max="100">
+                        <audio id="myAudio" autoplay>
+                            <source src="https://hiperd.github.io/WebFrontEnd/Atomos.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
-                    <audio id="myAudio" autoplay>
-                        <source src="https://hiperd.github.io/WebFrontEnd/Atomos.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
-                    </audio>
-                </selection>
+                </div>
             </nav>
         </header>
+
         <main>
-            <div class="section">
+            <section class="section">
                 <div class="section-content">
                     <h2>Nossa Missão</h2>
                     <p>Desde a nossa fundação, nossa missão sempre foi oferecer qualidade, segurança e inovação aos nossos clientes. Ao longo dos séculos, investimos pesadamente em pesquisa e desenvolvimento, criando parcerias com os maiores fabricantes de naves e garantindo que apenas os modelos mais avançados e confiáveis estivessem disponíveis em nosso catálogo. Essa filosofia nos consolidou como líderes no mercado intersistêmico de comércio de naves.</p>
                 </div>
-                <img src="https://via.placeholder.com/300x200.png?text=Nossa+Missao" alt="Nossa Missão">
-                </div>
+                <img src="85x.png" alt="Nossa Missão">
+            </section>
 
-                <div class="section reverse">
-                <img src="https://via.placeholder.com/300x200.png?text=Showrooms" alt="Showrooms">
+            <section class="section reverse">
                 <div class="section-content">
-                    <h2>Presença em Grandes Cidades</h2>
+                    <h2>Onde estamos</h2>
                     <p>Nossa presença se estende pelas maiores cidades dos sistemas em que atuamos, com showrooms impressionantes localizados em metrópoles como Area18, Lorville, New Babbage e Orison. Cada uma dessas unidades foi cuidadosamente projetada para proporcionar aos clientes uma experiência única, combinando tecnologia de ponta com atendimento personalizado.</p>
                 </div>
-                </div>
+                <img src="lojas.png" alt="Showrooms">
+            </section>
 
-                <div class="section">
+            <section class="section">
                 <div class="section-content">
                     <h2>Logística Avançada</h2>
                     <p>Além disso, nossa frota de transporte garante entregas rápidas e seguras, independentemente da distância ou das condições espaciais.</p>
                 </div>
                 <img src="Wherehowses.png" alt="Logística Avançada">
-                </div>
+            </section>
 
-                <div class="section reverse">
-                <img src="https://via.placeholder.com/300x200.png?text=Servicos" alt="Serviços">
+            <section class="section reverse">
                 <div class="section-content">
                     <h2>Serviços Especializados</h2>
-                    <p>Ao longo dos anos, nos adaptamos às transformações tecnológicas e às mudanças nas demandas dos viajantes interestelares. Expandimos nossos serviços para incluir manutenção especializada, customização de naves e programas de financiamento intergaláctico. Dessa forma, não apenas vendemos naves, mas também ajudamos nossos clientes a concretizar seus sonhos de exploração e conquista espacial.</p>
+                    <p>Expandimos nossos serviços para incluir manutenção especializada, customização de naves e programas de financiamento intergaláctico. Dessa forma, não apenas vendemos naves, mas também ajudamos nossos clientes a concretizar seus sonhos de exploração e conquista espacial.</p>
                 </div>
-                </div>
+                <img src="entregas.png" alt="Serviços">
+            </section>
 
-                <div class="section">
+            <section class="section">
                 <div class="section-content">
                     <h2>Nosso Legado</h2>
-                    <p>Hoje, com mais de 1.200 colaboradores distribuídos entre lojas físicas, centros de manutenção e equipes de suporte remoto, seguimos comprometidos com a excelência. Nosso legado é marcado pela confiança de milhares de pilotos, comerciantes e aventureiros que escolheram nossas naves para cruzar os confins do universo, sempre com segurança, conforto e alto desempenho.</p>
+                    <p>Hoje, com mais de 153.500 colaboradores distribuídos entre lojas físicas, centros de manutenção e equipes de suporte remoto, seguimos comprometidos com a excelência. Nosso legado é marcado pela confiança de milhares de pilotos, comerciantes e aventureiros que escolheram nossas naves para cruzar os confins do universo, sempre com segurança, conforto e alto desempenho.</p>
                 </div>
-                <img src="https://via.placeholder.com/300x200.png?text=Legado" alt="Nosso Legado">
-                </div>
+                <img src="navescitizen.png" alt="Nosso Legado">
+            </section>
         </main>
-        
-            
 
         <div id="footer"></div>
         <script>
             fetch('https://hiperd.github.io/WebFrontEnd/footer.html')
                 .then(response => response.text())
                 .then(data => {
-                document.getElementById('footer').innerHTML = data;
+                    document.getElementById('footer').innerHTML = data;
                 });
         </script>
 
-        <script src="scriptStart.js"></script>
+        <script src="scriptPages.js"></script>
     </body>
 </html>

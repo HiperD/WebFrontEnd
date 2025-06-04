@@ -63,6 +63,22 @@ header {
     font-weight: bold;
 }
 
+.menu2 {
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu2 a {
+    visibility: visible;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 main {
     padding-top: 100px;
 }
@@ -330,24 +346,46 @@ p {
 
 
 .section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 50px 0;
-  gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #222;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    max-width: 1200px;
 }
 
-.section-content {
-  flex: 1;
-  max-width: 600px;
+.section.reverse {
+    flex-direction: row-reverse;
 }
 
 .section img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+    width: 300px;
+    height: auto;
+    border-radius: 20px; /* cantos arredondados */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
+
+.section-content {
+    max-width: 500px;
+    color: #fff;
+}
+
+.section-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #FF6347; /* tom vibrante que combine com o dark */
+}
+
+.section-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
 
 /* Classe que inverte a direção do container */
 .section.reverse {
@@ -355,14 +393,22 @@ p {
 }
 
 /* Responsivo para telas menores */
-@media (max-width: 768px) {
-  .section, .section.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
+@media (max-width: 800px) {
+    .section, .section.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  .section img {
-    width: 100%;
-    height: auto;
-  }
+    .section img {
+        width: 100%;
+        height: auto;
+    }
+
+    .menu2 {
+        visibility: hidden;
+    }
+
+    .menu2 a {
+        visibility: hidden;
+    }
 }

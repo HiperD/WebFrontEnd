@@ -1,13 +1,5 @@
 // --- Menu Dinâmico ---
-function gerarMenu(destaque) {
-    return `<div class="menu" id="navMenu">
-                <a href="#nave1">Idris M</a>
-                <a href="#nave2">Hammerhead</a>
-                <a href="#nave3">890 Jump</a>
-                <a href="#nave4">Reclaimer</a>
-                <a href="#nave5">Hull C</a>
-            </div>`;
-}
+
 
 
 
@@ -18,20 +10,20 @@ function updateMenu() {
     const audioSection = document.getElementById('teste');
 
     if (window.innerWidth < 910) {
-        if (existingMenu) existingMenu.remove();
+        if (existingMenu) menu.style.display = "none";
         if (backBtn) backBtn.style.display = "block";
     } else {
         if (!existingMenu && navbar && audioSection) {
-            audioSection.insertAdjacentHTML('beforebegin', gerarMenu());
+            menu.style.display = "block";
         }
         if (backBtn) backBtn.style.display = "none";
     }
 }
 
 function removeMenuIfNeeded() {
-    const menu = document.getElementById('navMenu');
+    const menu = document.getElementById('menu2');
     if (window.innerWidth < 910 && menu) {
-        menu.remove();
+        menu.style.display = "block"
     }
 }
 
