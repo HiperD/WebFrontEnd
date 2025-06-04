@@ -19,6 +19,7 @@ function gerarMenu(destaque) {
 
 function getDestaquePagina() {
     const path = window.location.pathname;
+    if (path.includes('Showroom')) return 'Showroom';
     if (path.includes('Idris-M')) return 'Idris M';
     if (path.includes('Hammerhead')) return 'Hammerhead';
     if (path.includes('890-Jump')) return '890 Jump';
