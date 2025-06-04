@@ -133,10 +133,11 @@ main {
 footer {
     background-color: #111;
     padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 footer h3 {
