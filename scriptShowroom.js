@@ -17,7 +17,16 @@ function gerarMenu(destaque) {
     </div>`;
 }
 
-
+function getDestaquePagina() {
+    const path = window.location.pathname;
+    if (path.includes('Showroom')) return 'Showroom';
+    if (path.includes('Idris-M')) return 'Idris M';
+    if (path.includes('Hammerhead')) return 'Hammerhead';
+    if (path.includes('890-Jump')) return '890 Jump';
+    if (path.includes('Reclaimer')) return 'Reclaimer';
+    if (path.includes('Hull-C')) return 'Hull C';
+    return 'Início';
+}
 
 function updateMenu() {
     const navbar = document.querySelector('.navbar');
@@ -30,7 +39,7 @@ function updateMenu() {
         if (backBtn) backBtn.style.display = "block";
     } else {
         if (!existingMenu && navbar && audioSection) {
-            audioSection.insertAdjacentHTML('beforebegin', gerarMenu());
+            audioSection.insertAdjacentHTML('beforebegin', gerarMenu(getDestaquePagina()));
         }
         if (backBtn) backBtn.style.display = "none";
     }
